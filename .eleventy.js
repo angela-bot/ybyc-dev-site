@@ -8,25 +8,7 @@ const escapeHtml = (value) => String(value)
   .replace(/\"/g, "&quot;")
   .replace(/'/g, "&#39;");
 
-function navigationItems(source) {
-  const items = [];
-  let parent;
-
-  for (const line of source.split("\n")) {
-    const match = line.match(/^(\s*)-\s+\[([^\]]+)\]\(([^)]+)\)\s*$/);
-    if (!match) continue;
-    const item = { label: match[2], href: match[3], children: [] };
-    if (match[1].length) parent?.children.push(item);
-    else {
-      items.push(item);
-      parent = item;
-    }
-  }
-
-  return items;
-}
-
-function renderNavigation(source, activeSection) {
+function renderNavigation(items, activeSection) {
   const sections = {
     "index.html": "home",
     "about.html": "club",
@@ -45,7 +27,7 @@ function renderNavigation(source, activeSection) {
     return `<li class="nav-item dropdown"><a class="nav-link dropdown-toggle${isActive ? " active" : ""}" href="${href}" role="button" data-bs-toggle="dropdown" aria-expanded="false">${label}</a><ul class="dropdown-menu">${item.children.map((child) => `<li><a class="dropdown-item" href="${escapeHtml(child.href)}">${escapeHtml(child.label)}</a></li>`).join("")}</ul></li>`;
   }).join("");
 
-  return `<nav class="navbar navbar-expand-lg main-nav sticky-top" aria-label="Primary navigation"><div class="container-xl px-4"><a class="navbar-brand d-lg-none serif fw-bold" href="index.html">YBYC</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav">${links(navigationItems(source))}</ul></div></div></nav>`;
+  return `<nav class="navbar navbar-expand-lg main-nav sticky-top" aria-label="Primary navigation"><div class="container-xl px-4"><a class="navbar-brand d-lg-none serif fw-bold" href="index.html">YBYC</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav">${links(items)}</ul></div></div></nav>`;
 }
 
 function raceDate(value, format = "long") {
@@ -82,6 +64,7 @@ function raceDate(value, format = "long") {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("assets/wednesday-races");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addLiquidFilter("markdown", (source) => markdown.render(source));
   eleventyConfig.addLiquidFilter("navigation", (source, activeSection) => renderNavigation(source, activeSection));

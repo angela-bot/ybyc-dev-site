@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title">
+  <title id="title">Sailwave</title>
+  <rect width="240" height="64" rx="6" fill="#11649a"/>
+  <path d="M16 42c13-19 28-19 41 0 13-19 28-19 41 0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="5"/>
+  <text x="112" y="41" fill="#fff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Sailwave</text>
+</svg>
