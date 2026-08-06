@@ -2,6 +2,7 @@
 .env.*
 .env.example
 node_modules/
+_site/
 *.log
 __pycache__
 *.sw*

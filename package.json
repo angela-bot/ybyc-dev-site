@@ -1,0 +1,11 @@
+{
+  "name": "yaquina-bay-yacht-club",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
