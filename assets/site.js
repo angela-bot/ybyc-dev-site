@@ -1,39 +1,6 @@
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
-// Race dates are maintained in assets/current-races.js and inserted into event pages.
-const raceDateNodes = [...document.querySelectorAll('[data-race-date]')];
-if (raceDateNodes.length) {
-  const parseRaceDate = value => new Date(`${value}T12:00:00`);
-  const dateParts = date => ({
-    weekday: date.toLocaleDateString('en-US', { weekday: 'long' }),
-    month: date.toLocaleDateString('en-US', { month: 'long' }),
-    day: date.getDate(),
-    year: date.getFullYear()
-  });
-  const rangeText = (start, end) => {
-    const first = dateParts(start);
-    const last = dateParts(end);
-    if (first.year === last.year && first.month === last.month) return `${first.month} ${first.day}–${last.day}, ${first.year}`;
-    if (first.year === last.year) return `${first.month} ${first.day}–${last.month} ${last.day}, ${first.year}`;
-    return `${first.month} ${first.day}, ${first.year}–${last.month} ${last.day}, ${last.year}`;
-  };
-  const races = window.YBYC_RACE_DATES || {};
-  raceDateNodes.forEach(node => {
-    const [raceKey, dateKey = 'start'] = node.dataset.raceDate.split(':');
-    const race = races[raceKey];
-    if (!race?.[dateKey]) return;
-    const date = parseRaceDate(race[dateKey]);
-    const parts = dateParts(date);
-    const format = node.dataset.raceDateFormat || 'long';
-    if (format === 'card') node.innerHTML = `${parts.day}<small>${parts.month}</small>`;
-    else if (format === 'weekday-year') node.textContent = `${parts.weekday} · ${parts.year}`;
-    else if (format === 'range') node.textContent = rangeText(parseRaceDate(race.start), parseRaceDate(race.end));
-    else if (format === 'schedule') node.textContent = `${rangeText(parseRaceDate(race.start), parseRaceDate(race.end))} schedule`;
-    else node.textContent = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  });
-}
-
 // Display fallbacks. The backend replaces these with live Square catalog prices.
 const CATALOG = {
   'membership-household': { label: 'Household Annual Membership', variations: { renewal: { label: 'Annual renewal', priceMoney: { amount: 38000, currency: 'USD' } }, 'new-member': { label: 'New membership with initiation', priceMoney: { amount: 48000, currency: 'USD' } } } },

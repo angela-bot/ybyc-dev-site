@@ -1,0 +1,25 @@
+module.exports = {
+  club_alert: {
+    message: "The 2026 Adult Learn to Sail course has been canceled",
+    details_url: "adult-sailing.html",
+    details_label: "view class details"
+  },
+  events: {
+    spring_regatta: {
+      start: "2026-04-25",
+      end: "2026-04-25"
+    },
+    summer_sailstice: {
+      start: "2026-06-20",
+      end: "2026-06-20"
+    },
+    centerboard_slam: {
+      start: "2026-09-19",
+      end: "2026-09-19"
+    },
+    fall_regatta: {
+      start: "2026-10-10",
+      end: "2026-10-11"
+    }
+  }
+};

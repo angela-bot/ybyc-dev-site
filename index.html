@@ -166,7 +166,7 @@ navSection: home
   <div class="notice-bar">
     <div class="container-xl px-4 d-flex align-items-center gap-3 py-2">
       <span class="notice-label pe-3">Club notice</span>
-      <span class="small">The 2026 Adult Learn to Sail course has been canceled — <a href="adult-sailing.html">view class details</a></span>
+      <span class="small">{{ site.club_alert.message }} — <a href="{{ site.club_alert.details_url }}">{{ site.club_alert.details_label }}</a></span>
     </div>
   </div>
 
