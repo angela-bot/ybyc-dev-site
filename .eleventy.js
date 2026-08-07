@@ -31,7 +31,12 @@ function renderNavigation(items, activeSection) {
 }
 
 function raceDate(value, format = "long") {
-  const date = (dateValue) => new Date(`${dateValue}T12:00:00`);
+  const date = (dateValue) => {
+    if (dateValue instanceof Date) {
+      return new Date(dateValue.getUTCFullYear(), dateValue.getUTCMonth(), dateValue.getUTCDate(), 12);
+    }
+    return new Date(`${dateValue}T12:00:00`);
+  };
   const parts = (dateValue) => {
     const current = date(dateValue);
     return {

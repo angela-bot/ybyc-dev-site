@@ -16,10 +16,18 @@ events:
   fall_regatta:
     start: 2026-10-10
     end: 2026-10-11
-
-wednesday_racing:
-  year: 2026
-  current_series: summer
-  spring_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR0cVSj0bM4DrF3I04OvYi8ri_FQTqH7mRXct4WmFF_C19LYzCZp_7pIdI2mKzUlqNRbZQkaQsGDqQR/pubhtml?widget=true&amp;headers=false"
-  summer_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vScegj4ECSbGcIEzdbNxcZgzKRlBn1nKEeaxjvHptZvSJj6d_BsoptCTZXaZOFTzuutk3pagE3oJfLQ/pubhtml?widget=true&amp;headers=false"
-  fall_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ13uqT8ihMF2CMobyH5gyi9JT7Dmwp3t9UAODJzYk1Pt08w-1ohSIuu7-DgrOjCB00-ecOtj3sHmbE/pubhtml?widget=true&amp;headers=false"
+  wednesday_racing:
+    year: 2026
+    current_series: summer
+    spring_series:
+      start: 2026-04-29
+      end: 2026-06-17
+    summer_series:
+      start: 2026-06-24
+      end: 2026-08-12
+    fall_series:
+      start: 2026-08-19
+      end: 2026-10-07
+    spring_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR0cVSj0bM4DrF3I04OvYi8ri_FQTqH7mRXct4WmFF_C19LYzCZp_7pIdI2mKzUlqNRbZQkaQsGDqQR/pubhtml?widget=true&amp;headers=false"
+    summer_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vScegj4ECSbGcIEzdbNxcZgzKRlBn1nKEeaxjvHptZvSJj6d_BsoptCTZXaZOFTzuutk3pagE3oJfLQ/pubhtml?widget=true&amp;headers=false"
+    fall_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ13uqT8ihMF2CMobyH5gyi9JT7Dmwp3t9UAODJzYk1Pt08w-1ohSIuu7-DgrOjCB00-ecOtj3sHmbE/pubhtml?widget=true&amp;headers=false"
