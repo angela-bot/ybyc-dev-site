@@ -23,13 +23,6 @@ def load_env(path: Path) -> None:
 
 
 load_env(ROOT / ".env")
-catalog = json.loads((ROOT / "content" / "square-catalog.json").read_text())
-configured = {
-    variation["variationId"]: (product_key, variation_key, variation["label"])
-    for product_key, product in catalog["products"].items()
-    for variation_key, variation in product["variations"].items()
-}
-
 token = os.environ.get("SQUARE_ACCESS_TOKEN")
 environment = os.environ.get("SQUARE_ENVIRONMENT", "sandbox").lower()
 if not token:
@@ -37,10 +30,9 @@ if not token:
 
 host = "connect.squareupsandbox.com" if environment == "sandbox" else "connect.squareup.com"
 request = urllib.request.Request(
-    f"https://{host}/v2/catalog/batch-retrieve",
-    data=json.dumps({"object_ids": list(configured), "include_related_objects": True}).encode(),
+    f"https://{host}/v2/catalog/list",
     headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-    method="POST",
+    method="GET",
 )
 
 try:
@@ -50,20 +42,23 @@ except urllib.error.HTTPError as error:
     details = error.read().decode(errors="replace")
     sys.exit(f"Square returned HTTP {error.code}: {details}")
 
-found = {obj["id"]: obj for obj in payload.get("objects", []) if obj.get("type") == "ITEM_VARIATION"}
-for variation_id, (product_key, variation_key, label) in configured.items():
-    obj = found.get(variation_id)
-    if not obj:
-        print(f"MISSING  {product_key}:{variation_key} — {label}")
-        continue
-    data = obj.get("item_variation_data", {})
-    money = data.get("price_money")
-    if money:
-        price = f"{money.get('currency', 'USD')} {money.get('amount', 0) / 100:.2f}"
-    else:
-        price = "variable price"
-    print(f"OK       {product_key}:{variation_key} — {data.get('name', label)} — {price}")
+products = {}
 
-missing = set(configured) - set(found)
-print(f"\nValidated {len(found)}/{len(configured)} configured variations in {environment}.")
-sys.exit(1 if missing else 0)
+for item in payload['objects']:
+    if item['type'] == 'ITEM':
+        label = item['item_data']['name']
+        name = '-'.join(label.lower().replace('(','').replace(')','').split())
+        products[name] = {
+            'label': label,
+            'variations': {}
+        }
+        for variation in item['item_data']['variations']:
+            if variation['type'] == 'ITEM_VARIATION':
+                var_label = variation['item_variation_data']['name']
+                var_name = '-'.join(var_label.lower().replace('(','').replace(')','').replace(',','').split())
+                products[name]['variations'][var_name] = {
+                    'label': var_label,
+                    'variationId': variation['id']
+                }
+        #print(json.dumps(item, indent=4))
+print(json.dumps({ 'schema':2, 'products': products }, indent=4))

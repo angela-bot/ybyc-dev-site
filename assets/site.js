@@ -3,15 +3,14 @@ if (year) year.textContent = new Date().getFullYear();
 
 // Display fallbacks. The backend replaces these with live Square catalog prices.
 const CATALOG = {
-  'membership-household': { label: 'Household Annual Membership', variations: { renewal: { label: 'Annual renewal', priceMoney: { amount: 38000, currency: 'USD' } }, 'new-member': { label: 'New membership with initiation', priceMoney: { amount: 48000, currency: 'USD' } } } },
-  'membership-individual': { label: 'Individual Annual Membership', variations: { renewal: { label: 'Annual renewal', priceMoney: { amount: 32000, currency: 'USD' } }, 'new-member': { label: 'New membership with initiation', priceMoney: { amount: 42000, currency: 'USD' } } } },
-  'membership-crew': { label: 'Student, Military or Crew Membership', variations: { default: { label: 'Annual membership', priceMoney: { amount: 13000, currency: 'USD' } } } },
-  'adult-sail-member': { label: 'Adult Learn to Sail — Member', variations: { default: { label: 'Registration', priceMoney: { amount: 27000, currency: 'USD' } } } },
-  'adult-sail-nonmember': { label: 'Adult Learn to Sail — Non-member', variations: { default: { label: 'Registration', priceMoney: { amount: 54000, currency: 'USD' } } } },
-  'capri-club': { label: 'Capri Club', variations: { checkout: { label: 'Boat checkout', priceMoney: { amount: 2500, currency: 'USD' } }, 'wednesday-race': { label: 'Wednesday night racing', priceMoney: { amount: 6000, currency: 'USD' } }, 'daily-rental': { label: 'Daily rental', priceMoney: { amount: 7500, currency: 'USD' } }, 'seasonal-membership': { label: 'Seasonal membership', priceMoney: { amount: 15500, currency: 'USD' } } } },
-  'spring-regatta': { label: 'Spring Regatta', variations: { 'us-reg': { label: 'US Sailing registration', priceMoney: { amount: 5000, currency: 'USD' } }, 'non-us-reg': { label: 'Non-US Sailing registration', priceMoney: { amount: 5700, currency: 'USD' } }, 'club-youth': { label: 'Club Youth registration', priceMoney: { amount: 2000, currency: 'USD' } }, 't-shirt': { label: 'Additional T-shirt', priceMoney: { amount: 2000, currency: 'USD' } }, 'meal-ticket': { label: 'Additional meal ticket', priceMoney: { amount: 1000, currency: 'USD' } } } },
-  'fall-regatta': { label: 'Fall Regatta', variations: { 'us-reg': { label: 'US Sailing registration', priceMoney: { amount: 7500, currency: 'USD' } }, 'non-us-reg': { label: 'Non-US Sailing registration', priceMoney: { amount: 8000, currency: 'USD' } }, 'club-youth': { label: 'Club Youth registration', priceMoney: { amount: 2000, currency: 'USD' } }, 't-shirt': { label: 'Additional T-shirt', priceMoney: { amount: 2000, currency: 'USD' } }, 'meal-ticket': { label: 'Additional meal ticket', priceMoney: { amount: 1500, currency: 'USD' } } } },
-  'clubhouse-rental': { label: 'Clubhouse Rental', variations: { 'half-day': { label: 'Half-day', priceMoney: { amount: 25000, currency: 'USD' } }, 'full-day': { label: 'Full day', priceMoney: { amount: 50000, currency: 'USD' } } } }
+  'membership-new': { label: 'Membership (New)', variations: { individual: { label: 'Individual', priceMoney: { amount: 42000, currency: 'USD' } }, household: { label: 'Household', priceMoney: { amount: 48000, currency: 'USD' } } } },
+  'membership-existing': { label: 'Membership (Existing)', variations: { individual: { label: 'Individual', priceMoney: { amount: 32000, currency: 'USD' } }, household: { label: 'Household', priceMoney: { amount: 38000, currency: 'USD' } }, 'student-crew-military': { label: 'Student, Crew, Military', priceMoney: { amount: 13000, currency: 'USD' } } } },
+  'adult-learn-to-sail': { label: 'Adult Learn-To-Sail', variations: { member: { label: 'Member', priceMoney: { amount: 27000, currency: 'USD' } }, 'non-member': { label: 'Non-Member', priceMoney: { amount: 54000, currency: 'USD' } } } },
+  'capri-club': { label: 'Capri Club', variations: { 'checkout-fee': { label: 'Checkout Fee', priceMoney: { amount: 2500, currency: 'USD' } }, 'wednesday-night-racing': { label: 'Wednesday Night Racing', priceMoney: { amount: 6000, currency: 'USD' } }, 'daily-rental': { label: 'Daily Rental', priceMoney: { amount: 7500, currency: 'USD' } }, 'annual-membership': { label: 'Annual Membership', priceMoney: { amount: 15500, currency: 'USD' } } } },
+  'spring-regatta': { label: 'Spring Regatta', variations: { 'us-sailing-member': { label: 'US Sailing Member', priceMoney: { amount: 5000, currency: 'USD' } }, 'non-us-sailing-member': { label: 'Non-US Sailing Member', priceMoney: { amount: 5700, currency: 'USD' } }, 'club-youth-sailor': { label: 'Club Youth Sailor', priceMoney: { amount: 2000, currency: 'USD' } }, 'additional-t-shirt': { label: 'Additional T-Shirt', priceMoney: { amount: 2000, currency: 'USD' } }, 'additional-meal-ticket': { label: 'Additional Meal Ticket', priceMoney: { amount: 1000, currency: 'USD' } } } },
+  'fall-regatta': { label: 'Fall Regatta', variations: { 'us-sailing-member': { label: 'US Sailing Member', priceMoney: { amount: 7500, currency: 'USD' } }, 'non-us-sailing-member': { label: 'Non-US Sailing Member', priceMoney: { amount: 8000, currency: 'USD' } }, 'club-youth-sailor': { label: 'Club Youth Sailor', priceMoney: { amount: 2000, currency: 'USD' } }, 'additional-t-shirt': { label: 'Additional T-Shirt', priceMoney: { amount: 2000, currency: 'USD' } }, 'additional-meal-ticket': { label: 'Additional Meal Ticket', priceMoney: { amount: 1500, currency: 'USD' } } } },
+  'wednesday-night-racing-non-club-member': { label: 'Wednesday Night Racing (Non Club Member)', variations: { 'spring-series': { label: 'Spring Series', priceMoney: { amount: 8000, currency: 'USD' } }, 'summer-series': { label: 'Summer Series', priceMoney: { amount: 8000, currency: 'USD' } }, 'fall-series': { label: 'Fall Series', priceMoney: { amount: 8000, currency: 'USD' } } } },
+  'clubhouse-rental': { label: 'Clubhouse Rental', variations: { 'half-day': { label: 'Half-Day', priceMoney: { amount: 25000, currency: 'USD' } }, 'full-day': { label: 'Full Day', priceMoney: { amount: 50000, currency: 'USD' } } } }
 };
 
 const money = value => value
@@ -48,7 +47,7 @@ function saveCart(refreshQuote = true) {
 
 function addToCart(productKey, variationKey) {
   const value = sku(productKey, variationKey);
-  if (!productInfo(value)) return;
+  if (!productInfo(value) || productInfo(value).variation.inStock === false) return;
   cart[value] = (cart[value] || 0) + 1;
   saveCart();
   bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('cartDrawer')).show();
@@ -123,6 +122,18 @@ async function loadCatalog() {
       const variation = CATALOG[node.dataset.squareProduct]?.variations?.[node.dataset.squareVariation];
       if (variation?.priceMoney) node.textContent = money(variation.priceMoney);
     });
+    document.querySelectorAll('[data-product-key][data-variation-key]').forEach(button => {
+      const variation = CATALOG[button.dataset.productKey]?.variations?.[button.dataset.variationKey];
+      if (variation?.inStock === false) {
+        button.disabled = true;
+        button.setAttribute('aria-disabled', 'true');
+        button.textContent = 'Out of stock';
+      }
+    });
+    Object.keys(cart).forEach(value => {
+      if (productInfo(value)?.variation.inStock === false) delete cart[value];
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
     renderCart();
     if (Object.keys(cart).length) requestQuote();
   } catch {
@@ -174,9 +185,9 @@ document.getElementById('squareCheckout')?.addEventListener('click', async event
 // Upgrade exact legacy purchase links; products with choices lead to the shop.
 const legacyLinks = [
   ['/store/p15/', 'shop.html#memberships'], ['/store/p14/', 'shop.html#memberships'], ['/store/p18/', 'shop.html#capri'],
-  ['/store/p13/', ['membership-crew', 'default']], ['/store/p19/', ['adult-sail-member', 'default']], ['/store/p20/', ['adult-sail-nonmember', 'default']],
-  ['/store/p32/', ['spring-regatta', 'us-reg']], ['/store/p3/', ['spring-regatta', 'non-us-reg']], ['/store/p4/', ['spring-regatta', 'club-youth']],
-  ['/store/p9/', ['fall-regatta', 'non-us-reg']], ['/store/p11/', ['fall-regatta', 't-shirt']], ['/store/p12/', ['spring-regatta', 'meal-ticket']]
+  ['/store/p13/', ['membership-existing', 'student-crew-military']], ['/store/p19/', ['adult-learn-to-sail', 'member']], ['/store/p20/', ['adult-learn-to-sail', 'non-member']],
+  ['/store/p32/', ['spring-regatta', 'us-sailing-member']], ['/store/p3/', ['spring-regatta', 'non-us-sailing-member']], ['/store/p4/', ['spring-regatta', 'club-youth-sailor']],
+  ['/store/p9/', ['fall-regatta', 'non-us-sailing-member']], ['/store/p11/', ['fall-regatta', 'additional-t-shirt']], ['/store/p12/', ['spring-regatta', 'additional-meal-ticket']]
 ];
 document.querySelectorAll('a[href*="/store/p"]').forEach(link => {
   const match = legacyLinks.find(([path]) => link.href.includes(path));

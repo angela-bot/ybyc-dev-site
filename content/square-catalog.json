@@ -1,0 +1,149 @@
+{
+    "schema": 2,
+    "products": {
+        "capri-club": {
+            "label": "Capri Club",
+            "variations": {
+                "annual-membership": {
+                    "label": "Annual Membership",
+                    "variationId": "RMZ35MYIQMESY6ZDQRP7E6U4"
+                },
+                "checkout-fee": {
+                    "label": "Checkout Fee",
+                    "variationId": "632HFJ5HFYS7KFEO3CMGLNZX"
+                },
+                "daily-rental": {
+                    "label": "Daily Rental",
+                    "variationId": "KARLRIVDNQPZQWIY4ZMRBHIZ"
+                },
+                "wednesday-night-racing": {
+                    "label": "Wednesday Night Racing",
+                    "variationId": "CLNSIU4V446HQSILSPQAKQCF"
+                }
+            }
+        },
+        "spring-regatta": {
+            "label": "Spring Regatta",
+            "variations": {
+                "us-sailing-member": {
+                    "label": "US Sailing Member",
+                    "variationId": "VKRO3TFCXS3YO23AFXLBPGL4"
+                },
+                "non-us-sailing-member": {
+                    "label": "Non-US Sailing Member",
+                    "variationId": "WZXSGJK556PN3ZDGMZ7DWSQ6"
+                },
+                "club-youth-sailor": {
+                    "label": "Club Youth Sailor",
+                    "variationId": "D3NSG3NTTE56ZJVBCA424QQV"
+                },
+                "additional-t-shirt": {
+                    "label": "Additional T-Shirt",
+                    "variationId": "3JIKHWOQ2M3IYZ2XDQWGAQJ5"
+                },
+                "additional-meal-ticket": {
+                    "label": "Additional Meal Ticket",
+                    "variationId": "Z6Z2Z6X7NCHJF4B7PU6QLSHY"
+                }
+            }
+        },
+        "fall-regatta": {
+            "label": "Fall Regatta",
+            "variations": {
+                "us-sailing-member": {
+                    "label": "US Sailing Member",
+                    "variationId": "6EJF3TMJIJ3KGSG4UYQSCSBH"
+                },
+                "non-us-sailing-member": {
+                    "label": "Non-US Sailing Member",
+                    "variationId": "D2G7JD7J6RITUCT7DQXQWSVJ"
+                },
+                "club-youth-sailor": {
+                    "label": "Club Youth Sailor",
+                    "variationId": "LZUKNMRUN4GSRDIOQEUABFTG"
+                },
+                "additional-t-shirt": {
+                    "label": "Additional T-Shirt",
+                    "variationId": "42TOBBBHSRJHSI5NDWMNOW7M"
+                },
+                "additional-meal-ticket": {
+                    "label": "Additional Meal Ticket",
+                    "variationId": "E3PCZW3YKH3GRVJDNXIVSBMG"
+                }
+            }
+        },
+        "clubhouse-rental": {
+            "label": "Clubhouse Rental",
+            "variations": {
+                "half-day": {
+                    "label": "Half-Day",
+                    "variationId": "JAR5E6S2YL5PQQKD6DKC7TWK"
+                },
+                "full-day": {
+                    "label": "Full Day",
+                    "variationId": "25WJCIPCM7V7AXYPAUC32L2N"
+                }
+            }
+        },
+        "wednesday-night-racing-non-club-member": {
+            "label": "Wednesday Night Racing (Non Club Member)",
+            "variations": {
+                "spring-series": {
+                    "label": "Spring Series",
+                    "variationId": "KYU4HDHH5C74S35KDLYNITW2"
+                },
+                "summer-series": {
+                    "label": "Summer Series",
+                    "variationId": "BZPAPSEHFKKG4ONUT5FO5DNF"
+                },
+                "fall-series": {
+                    "label": "Fall Series",
+                    "variationId": "44L3IGHW3HYZCW46EIHOCH24"
+                }
+            }
+        },
+        "adult-learn-to-sail": {
+            "label": "Adult Learn-To-Sail",
+            "variations": {
+                "member": {
+                    "label": "Member",
+                    "variationId": "VO36NEFQ4DUL2BJG44IKOWPN"
+                },
+                "non-member": {
+                    "label": "Non-Member",
+                    "variationId": "PBX43EFNJD4EE3F74W42VYE7"
+                }
+            }
+        },
+        "membership-new": {
+            "label": "Membership (New)",
+            "variations": {
+                "individual": {
+                    "label": "Individual",
+                    "variationId": "BO5K5A5FM3XAKDQOSNJU5E5W"
+                },
+                "household": {
+                    "label": "Household",
+                    "variationId": "MPEON4565CSJJDUQMYDQR4HK"
+                }
+            }
+        },
+        "membership-existing": {
+            "label": "Membership (Existing)",
+            "variations": {
+                "individual": {
+                    "label": "Individual",
+                    "variationId": "OFNYHOPJHDN5VL4A2CKUYMMP"
+                },
+                "household": {
+                    "label": "Household",
+                    "variationId": "P22X6PXHUDXMM6LSYW3CNFGK"
+                },
+                "student-crew-military": {
+                    "label": "Student, Crew, Military",
+                    "variationId": "KCO7ZQZFDWRRQV4RRWCZLKYN"
+                }
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
-CONFIG_PATH = ROOT / "config" / "square-catalog.json"
+CONFIG_PATH = ROOT / "content" / "square-catalog.json"
 
 
 def load_env(path: Path) -> None:
@@ -77,6 +77,22 @@ def configured_variations():
             yield product_key, product, variation_key, variation
 
 
+def inventory_by_variation(variation_ids: list[str]) -> dict:
+    """Return live on-hand quantities for inventory-tracked variations."""
+    payload = {"catalog_object_ids": variation_ids, "states": ["IN_STOCK"]}
+    location_id = os.environ.get("SQUARE_LOCATION_ID")
+    if location_id:
+        payload["location_ids"] = [location_id]
+    response = square_request("/v2/inventory/batch-retrieve-counts", "POST", payload)
+    quantities = {}
+    for count in response.get("counts", []):
+        variation_id = count.get("catalog_object_id")
+        if not variation_id:
+            continue
+        quantities[variation_id] = quantities.get(variation_id, 0) + float(count.get("quantity", 0))
+    return quantities
+
+
 def catalog_response() -> dict:
     configured = list(configured_variations())
     square = square_request(
@@ -85,6 +101,16 @@ def catalog_response() -> dict:
         {"object_ids": [variation["variationId"] for _, _, _, variation in configured], "include_related_objects": True},
     )
     found = {obj["id"]: obj for obj in square.get("objects", []) if obj.get("type") == "ITEM_VARIATION"}
+    tracked_ids = [
+        variation["variationId"]
+        for _, _, _, variation in configured
+        if found.get(variation["variationId"], {}).get("item_variation_data", {}).get("track_inventory")
+    ]
+    try:
+        inventory = inventory_by_variation(tracked_ids) if tracked_ids else {}
+    except SquareError:
+        # Catalog prices should remain available if the token lacks inventory scope.
+        inventory = None
     products = {}
     for product_key, product, variation_key, variation in configured:
         obj = found.get(variation["variationId"], {})
@@ -96,6 +122,7 @@ def catalog_response() -> dict:
             "variationId": variation["variationId"],
             "priceMoney": data.get("price_money"),
             "presentAtAllLocations": obj.get("present_at_all_locations", False),
+            "inStock": not data.get("track_inventory") or inventory is None or inventory.get(variation["variationId"], 0) > 0,
         }
     return {"environment": os.environ.get("SQUARE_ENVIRONMENT", "sandbox"), "products": products}
 
