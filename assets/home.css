@@ -1,0 +1,59 @@
+.hero { position: relative; overflow: hidden; background: var(--cream); border-bottom: 1px solid var(--line); }
+.hero::before { content: ""; position: absolute; inset: auto 0 0; height: 8px; background: repeating-linear-gradient(90deg, var(--navy) 0 70px, var(--paper) 70px 75px, var(--red) 75px 145px, var(--paper) 145px 150px); }
+.hero-title { color: var(--navy); font-size: clamp(3rem, 7vw, 6.4rem); font-weight: 400; line-height: .93; letter-spacing: -.045em; }
+.hero-copy { max-width: 38rem; color: var(--muted); font-size: 1.08rem; line-height: 1.85; }
+.harbor-graphic { position: relative; min-height: 430px; border-left: 1px solid var(--line); }
+.harbor-disc { position: absolute; width: 340px; height: 340px; border-radius: 50%; top: 38px; left: 50%; transform: translateX(-50%); background: #d9eaf0; }
+.harbor-disc::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(16,29,73,.2); border-radius: 50%; }
+.harbor-lines { position: absolute; inset: auto 0 50px; height: 100px; background: repeating-radial-gradient(ellipse at center top, transparent 0 18px, rgba(22,90,131,.35) 19px 21px, transparent 22px 35px); }
+.sailboat { position: absolute; z-index: 2; width: 310px; left: 50%; bottom: 76px; transform: translateX(-50%); }
+.coordinates { position: absolute; z-index: 3; right: 0; bottom: 12px; color: var(--navy); font-size: .7rem; font-weight: 800; letter-spacing: .13em; writing-mode: vertical-rl; }
+.bulletin { position: relative; z-index: 4; margin: -48px 0 0 auto; width: min(410px, 90%); background: var(--navy); color: #fff; box-shadow: 14px 14px 0 var(--gold); }
+.bulletin-head { padding: 1rem 1.35rem; border-bottom: 1px solid rgba(255,255,255,.18); font-size: .72rem; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.bulletin-item { display: block; padding: 1.1rem 1.35rem; border-bottom: 1px solid rgba(255,255,255,.12); color: #fff; text-decoration: none; }
+.bulletin-item:hover { background: rgba(255,255,255,.08); }
+.bulletin-item small { color: rgba(255,255,255,.6); }
+.quick-nav { border-bottom: 1px solid var(--line); background: #fff; }
+.quick-link { display: flex; gap: 1rem; align-items: center; height: 100%; padding: 1.4rem; border-right: 1px solid var(--line); color: var(--navy); text-decoration: none; }
+.quick-link:first-child { border-left: 1px solid var(--line); }
+.quick-link:hover { color: var(--red); background: var(--cream); }
+.quick-icon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border: 1px solid currentColor; border-radius: 50%; font-family: Georgia, serif; font-size: 1.3rem; }
+.quick-link span:last-child { font-size: .77rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.history-lead { color: var(--ink); font-family: Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.55; }
+.fact-panel { padding: 2rem; border: 1px solid var(--line); background: var(--cream); }
+.fact-row { display: grid; grid-template-columns: 90px 1fr; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.fact-row:last-child { border: 0; }
+.fact-row strong { color: var(--navy); font-family: Georgia, serif; font-size: 1.4rem; }
+.activity-table { border-top: 3px solid var(--navy); }
+.activity-row { display: grid; grid-template-columns: 62px 1fr auto; gap: 1.25rem; align-items: center; padding: 1.65rem 0; border-bottom: 1px solid var(--line); }
+.activity-number { color: var(--red); font-family: Georgia, serif; font-size: 1.5rem; }
+.activity-row h3 { margin: 0; color: var(--navy); font-size: 1.55rem; }
+.activity-row p { margin: .35rem 0 0; color: var(--muted); }
+.activity-arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--navy); color: var(--navy); text-decoration: none; }
+.activity-arrow:hover { color: #fff; background: var(--navy); }
+.calendar-card { height: 100%; padding: 2rem; border: 0; border-radius: 0; background: var(--navy); color: #fff; box-shadow: 12px 12px 0 var(--gold); }
+.date-block { width: 72px; padding: .7rem .5rem; border: 1px solid rgba(255,255,255,.35); text-align: center; }
+.date-block strong { display: block; font-family: Georgia, serif; font-size: 1.7rem; }
+.date-block span { display: block; color: rgba(255,255,255,.55); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.membership { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.membership-table { margin: 0; border: 1px solid var(--line); background: #fff; }
+.membership-table > :not(caption) > * > * { padding: 1.1rem 1rem; border-color: var(--line); vertical-align: middle; }
+.membership-table thead th { color: #fff; background: var(--navy); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+.membership-table .type { color: var(--navy); font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; }
+.membership-table .price { color: var(--red); font-weight: 900; white-space: nowrap; }
+.benefit-list { padding-left: 0; list-style: none; }
+.benefit-list li { position: relative; padding: .72rem 0 .72rem 1.8rem; border-bottom: 1px solid var(--line); }
+.benefit-list li::before { content: "✓"; position: absolute; left: 0; color: var(--red); font-weight: 900; }
+.clubhouse-band { background: var(--blue); color: #fff; }
+.room-numbers { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(255,255,255,.3); }
+.room-number { padding: 1.3rem .8rem; border-right: 1px solid rgba(255,255,255,.3); text-align: center; }
+.room-number:last-child { border: 0; }
+.room-number strong { display: block; font-family: Georgia, serif; font-size: 2rem; }
+.room-number span { color: rgba(255,255,255,.6); font-size: .7rem; text-transform: uppercase; }
+.newsletter { background: var(--paper); }
+.jib-sheet { position: relative; padding: 2rem; border: 1px solid var(--line); background: #fff; box-shadow: 8px 8px 0 #e7e3d7; }
+.jib-sheet::before { content: "THE JIB SHEET"; display: block; padding-bottom: .85rem; border-bottom: 4px double var(--navy); color: var(--navy); font-family: Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.7rem); font-style: italic; font-weight: 700; text-align: center; }
+.series-link { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--line); color: var(--navy); font-weight: 800; text-decoration: none; }
+.series-link:hover { color: var(--red); }
+@media (max-width: 991.98px) { .harbor-graphic { min-height: 390px; border: 0; } .bulletin { margin-top: -25px; margin-right: auto; } .quick-link { border-bottom: 1px solid var(--line); } .activity-row { grid-template-columns: 52px 1fr auto; } }
+@media (max-width: 575.98px) { .hero-title { font-size: 3.4rem; } .harbor-disc { width: 290px; height: 290px; } .sailboat { width: 270px; } .activity-row { grid-template-columns: 38px 1fr; gap: .75rem; } .activity-arrow { display: none; } .membership-table { font-size: .86rem; } .membership-table > :not(caption) > * > * { padding: .8rem .55rem; } .room-number strong { font-size: 1.55rem; } }

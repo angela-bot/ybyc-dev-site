@@ -20,7 +20,7 @@ a { color: var(--blue); }
 .utility-bar a { color: #fff; text-decoration: none; }
 .utility-bar a:hover { text-decoration: underline; }
 .masthead { background: var(--paper); }
-.site-logo { width: min(620px, 100%); height: auto; }
+.site-logo { width: min(720px, 100%); height: auto; }
 .tagline { color: var(--muted); font-family: Georgia, serif; font-style: italic; }
 .main-nav { background: #fff; border-top: 1px solid var(--line); border-bottom: 4px solid var(--navy); }
 .main-nav > .container-xl { position: relative; }
