@@ -3,6 +3,31 @@ club_alert:
   details_url: adult-sailing.html
   details_label: View class details
 
+from_the_clubhouse:
+  potluck:
+    date: 2026-08-15
+    details_label: Monthly Potluck
+  jibsheet:
+    month: August
+    year: 2026
+    url: https://drive.google.com/file/d/1GNtcJg2Rmlu7R89KFANzPdpAzbEVlMr4/view
+
+club_highlights:
+  year: 2026
+  calendar:
+    - tag: Sep 2026
+      heading: Centerboard Slam!
+      message: Join us for a dinghy regatta on the bay
+      url: centerboard-slam.html
+    - tag: Wed Seasonal
+      heading: Evening race series
+      message: Spring, summer, and fall racing on Yaquina Bay
+      url: wednesday-night-racing.html
+    - tag: Year Round
+      heading: Community events
+      message: Regattas, the Wooden Boat Show, parades, and social gatherings.
+      url: sailing.html
+
 events:
   spring_regatta:
     start: 2026-04-25

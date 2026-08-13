@@ -32,6 +32,8 @@
 .activity-arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--navy); color: var(--navy); text-decoration: none; }
 .activity-arrow:hover { color: #fff; background: var(--navy); }
 .calendar-card { height: 100%; padding: 2rem; border: 0; border-radius: 0; background: var(--navy); color: #fff; box-shadow: 12px 12px 0 var(--gold); }
+.calendar-highlight { color: #fff; text-decoration: none; transition: background-color .2s ease; }
+.calendar-highlight:hover, .calendar-highlight:focus { color: #fff; background: rgba(255,255,255,.1); }
 .date-block { width: 72px; padding: .7rem .5rem; border: 1px solid rgba(255,255,255,.35); text-align: center; }
 .date-block strong { display: block; font-family: Georgia, serif; font-size: 1.7rem; }
 .date-block span { display: block; color: rgba(255,255,255,.55); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }

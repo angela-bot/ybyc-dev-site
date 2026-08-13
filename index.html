@@ -57,8 +57,8 @@ navSection: home
             </div>
             <aside class="bulletin" aria-label="Club bulletin">
               <div class="bulletin-head">From the clubhouse</div>
-              <a class="bulletin-item" href="adult-sailing.html"><small>August–September 2026</small><strong class="d-block mt-1 serif fs-5">Adult Learn to Sail</strong></a>
-              <a class="bulletin-item" href="https://drive.google.com/file/d/1YTsXaCSab8beTxli4HWkRVnbknhKc_hI/view"><small>Latest archived issue</small><strong class="d-block mt-1 serif fs-5">July Jib Sheet</strong></a>
+              <div class="bulletin-item"><small>{{ site.from_the_clubhouse.potluck.date | raceDate: "month-day-year" }}</small><strong class="d-block mt-1 serif fs-5">{{ site.from_the_clubhouse.potluck.details_label }}</strong></div>
+              <a class="bulletin-item" href="#newsletter"><small>Latest issue</small><strong class="d-block mt-1 serif fs-5">{{ site.from_the_clubhouse.jibsheet.month }} Jib Sheet</strong></a>
             </aside>
           </div>
         </div>
@@ -106,10 +106,8 @@ navSection: home
         </div>
         <div id="events" class="col-lg-5">
           <div class="calendar-card">
-            <p class="hero-kicker text-warning mb-2">2026 calendar</p><h2 class="serif fs-1 mb-4">Club highlights</h2>
-            <div class="d-flex gap-3 py-4 border-top border-white border-opacity-25"><div class="date-block"><strong>Aug</strong><span>2026</span></div><div><h3 class="fs-5 mb-2">Adult Learn to Sail</h3><p class="small text-white-50 mb-0">Classes run August–September. Payment is required by July 27.</p></div></div>
-            <div class="d-flex gap-3 py-4 border-top border-white border-opacity-25"><div class="date-block"><strong>Wed</strong><span>Seasonal</span></div><div><h3 class="fs-5 mb-2">Evening race series</h3><p class="small text-white-50 mb-0">Spring, summer, and fall racing on Yaquina Bay.</p></div></div>
-            <div class="d-flex gap-3 py-4 border-top border-white border-opacity-25"><div class="date-block"><strong>Year</strong><span>Round</span></div><div><h3 class="fs-5 mb-2">Community events</h3><p class="small text-white-50 mb-0">Regattas, the Wooden Boat Show, parades, and social gatherings.</p></div></div>
+            <p class="hero-kicker text-warning mb-2">{{ site.club_highlights.year }} calendar</p><h2 class="serif fs-1 mb-4">Club highlights</h2>
+            {% for highlight in site.club_highlights.calendar %}{% assign tag_parts = highlight.tag | split: " " %}<a class="calendar-highlight d-flex gap-3 py-4 border-top border-white border-opacity-25" href="{{ highlight.url }}"><div class="date-block"><strong>{{ tag_parts[0] }}</strong><span>{{ tag_parts[1] }}</span></div><div><h3 class="fs-5 mb-2">{{ highlight.heading }}</h3>{% if highlight.message %}<p class="small text-white-50 mb-0">{{ highlight.message }}</p>{% endif %}</div></a>{% endfor %}
             <a href="events.html" class="btn btn-ybyc btn-light mt-4">Open the live calendar</a>
           </div>
         </div>
@@ -152,7 +150,7 @@ navSection: home
 
     <section id="newsletter" class="newsletter section-space">
       <div class="container-xl px-4"><div class="row g-5 align-items-center">
-        <div class="col-lg-6"><article class="jib-sheet"><p class="text-center hero-kicker mt-4">The club newsletter</p><h2 class="text-center serif fs-1 text-navy">July 2026</h2><p class="text-center text-secondary lh-lg mx-auto" style="max-width:390px">News, member stories, race notices, and everything happening around the clubhouse.</p><div class="text-center mt-4"><a href="https://drive.google.com/file/d/1YTsXaCSab8beTxli4HWkRVnbknhKc_hI/view" class="btn btn-ybyc btn-navy">Read the latest issue</a></div></article></div>
+        <div class="col-lg-6"><article class="jib-sheet"><p class="text-center hero-kicker mt-4">The club newsletter</p><h2 class="text-center serif fs-1 text-navy">{{ site.from_the_clubhouse.jibsheet.month }} {{ site.from_the_clubhouse.jibsheet.year }}</h2><p class="text-center text-secondary lh-lg mx-auto" style="max-width:390px">News, member stories, race notices, and everything happening around the clubhouse.</p><div class="text-center mt-4"><a href="{{ site.from_the_clubhouse.jibsheet.url }}" class="btn btn-ybyc btn-navy">Read the latest issue</a></div></article></div>
         <div class="col-lg-6"><p class="section-rule">Wednesday racing</p><h2 class="section-title mt-4">Follow the fleet.</h2><p class="text-secondary lh-lg mt-3">Find participation information, current spring, summer, and fall standings, and the historical results archive on the dedicated Wednesday Night Racing page.</p><a href="wednesday-night-racing.html" class="btn btn-ybyc btn-navy mt-3">Racing information &amp; results</a></div>
       </div></div>
     </section>
