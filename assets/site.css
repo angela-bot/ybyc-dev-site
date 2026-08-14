@@ -159,7 +159,7 @@ footer a:hover { text-decoration: underline; }
   .main-nav .navbar-nav { padding-top: .75rem; }
   .main-nav .nav-link { padding: .8rem 0 !important; }
   .main-nav .dropdown-menu { border-top-width: 1px; box-shadow: none; }
-  .cart-nav-button { position: absolute; top: 4px; right: 76px; margin: 0; }
+  .cart-nav-button { position: absolute; top: 50%; right: 5.75rem; margin: 0; transform: translateY(-50%); }
 }
 @media (max-width: 575.98px) {
   .notice-label { display: none; }
