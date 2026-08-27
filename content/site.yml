@@ -43,7 +43,7 @@ events:
     end: 2026-10-11
   wednesday_racing:
     year: 2026
-    current_series: summer
+    current_series: fall
     spring_series:
       start: 2026-04-29
       end: 2026-06-17
