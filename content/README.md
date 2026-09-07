@@ -3,7 +3,6 @@
 Edit the files in this folder to update recurring site content:
 
 - `site.yml` — club alert and event dates.
-- `square-catalog.json` — Square product and variation IDs used by purchase buttons.
 - `navigation.md` — primary navigation links. Indent a link by two spaces to place it in the preceding menu.
 - `wednesday-races.md` — archived Wednesday-race links and descriptions.
 
