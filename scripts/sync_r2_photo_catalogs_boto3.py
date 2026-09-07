@@ -4,6 +4,7 @@
 Examples:
   python3 scripts/sync_r2_photo_catalogs_boto3.py --dry-run
   python3 scripts/sync_r2_photo_catalogs_boto3.py --folder capri-club
+  python3 scripts/sync_r2_photo_catalogs_boto3.py --refresh-rights
 
 Requires: python3 -m pip install boto3 Pillow PyYAML
 """
@@ -28,6 +29,11 @@ ORIGINALS_BUCKET = "ybyc-originals"
 PUBLIC_BUCKET = "ybyc-public-media"
 DEFAULT_PUBLIC_BASE_URL = "https://pub-ff40f0e34f5d405ab572551084bddb62.r2.dev"
 IMAGE_EXTENSIONS = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".tif", ".tiff", ".webp"}
+DEFAULT_RIGHTS = {
+    "creator": "Yaquina Bay Yacht Club",
+    "copyright": "© Yaquina Bay Yacht Club",
+    "rights": "All rights reserved. No AI training or machine-learning use.",
+}
 
 
 def list_keys(client, bucket: str) -> list[str]:
@@ -54,11 +60,15 @@ def public_key(original_key: str) -> str:
     return str(path.with_name(f"{stem}.webp")).replace("\\", "/")
 
 
-def webp_bytes(data: bytes) -> bytes:
+def webp_bytes(data: bytes, rights: dict[str, str]) -> bytes:
     with Image.open(io.BytesIO(data)) as source:
         image = ImageOps.exif_transpose(source)
+        exif = image.getexif()
+        exif[270] = rights["rights"]  # ImageDescription
+        exif[315] = rights["creator"]  # Artist
+        exif[33432] = rights["copyright"]  # Copyright
         output = io.BytesIO()
-        image.save(output, format="WEBP", quality=82, method=6)
+        image.save(output, format="WEBP", quality=82, method=6, exif=exif.tobytes())
         return output.getvalue()
 
 
@@ -91,6 +101,8 @@ def rebuilt_catalog(existing: dict, folder: str, originals: list[str], base_url:
     ordered_keys.extend(key for key in public_keys if key not in ordered_keys)
     catalog = {name: value for name, value in existing.items() if name != "photos"}
     catalog.setdefault("title", f"{friendly_title(folder)} slideshow")
+    for name, value in DEFAULT_RIGHTS.items():
+        catalog.setdefault(name, value)
     catalog["photos"] = []
     for key in ordered_keys:
         url = catalog_url(base_url, key)
@@ -98,6 +110,25 @@ def rebuilt_catalog(existing: dict, folder: str, originals: list[str], base_url:
         rest = {name: value for name, value in old.items() if name not in {"url", "alt"}}
         catalog["photos"].append({"url": url, "alt": old.get("alt", f"{friendly_title(folder)} photo"), **rest})
     return catalog
+
+
+def rights_metadata(catalog: dict) -> dict[str, str]:
+    """Return non-empty, human-editable catalog rights fields for an image."""
+    metadata = {}
+    for name, default in DEFAULT_RIGHTS.items():
+        value = catalog.get(name, default)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"Catalog {name!r} must be a non-empty string")
+        metadata[name] = value.strip()
+    return metadata
+
+
+def r2_metadata(rights: dict[str, str]) -> dict[str, str]:
+    """R2/S3 user-metadata values are HTTP headers and therefore ASCII-only."""
+    return {
+        name: value.replace("©", "(c)").encode("ascii", "replace").decode("ascii")
+        for name, value in rights.items()
+    }
 
 
 def write_catalog(path: Path, catalog: dict) -> None:
@@ -108,6 +139,11 @@ def write_catalog(path: Path, catalog: dict) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Synchronize R2 originals, public WebPs, and photo catalogs.")
     parser.add_argument("--dry-run", action="store_true", help="Report changes without writing to R2 or disk")
+    parser.add_argument(
+        "--refresh-rights",
+        action="store_true",
+        help="Regenerate existing public WebPs with the catalog's embedded and R2 rights metadata",
+    )
     parser.add_argument("--folder", action="append", help="Only synchronize this immediate originals folder (repeatable)")
     parser.add_argument("--originals-bucket", default=ORIGINALS_BUCKET)
     parser.add_argument("--public-bucket", default=PUBLIC_BUCKET)
@@ -129,26 +165,31 @@ def main() -> int:
         for folder in sorted(requested):
             originals = folders[folder]
             print(f"{folder}: {len(originals)} original image(s)")
+            path = args.catalog_dir / f"{folder}.yml"
+            catalog = rebuilt_catalog(load_catalog(path), folder, originals, args.public_base_url)
+            rights = rights_metadata(catalog)
             for original in originals:
                 destination = public_key(original)
-                if destination in public_keys:
+                exists = destination in public_keys
+                if exists and not args.refresh_rights:
                     continue
                 if args.dry_run:
-                    print(f"  would create {destination}")
+                    action = "refresh" if exists else "create"
+                    print(f"  would {action} {destination}")
                 else:
                     original_bytes = client.get_object(Bucket=args.originals_bucket, Key=original)["Body"].read()
                     client.put_object(
                         Bucket=args.public_bucket,
                         Key=destination,
-                        Body=webp_bytes(original_bytes),
+                        Body=webp_bytes(original_bytes, rights),
                         ContentType="image/webp",
                         CacheControl="public, max-age=31536000, immutable",
+                        Metadata=r2_metadata(rights),
                     )
                     public_keys.add(destination)
-                    print(f"  created {destination}")
+                    action = "refreshed" if exists else "created"
+                    print(f"  {action} {destination}")
                 webps_changed += 1
-            path = args.catalog_dir / f"{folder}.yml"
-            catalog = rebuilt_catalog(load_catalog(path), folder, originals, args.public_base_url)
             rendered = yaml.safe_dump(catalog, allow_unicode=True, sort_keys=False)
             current = path.read_text(encoding="utf-8") if path.exists() else ""
             if current.startswith("# This catalog is generated") and current.endswith(rendered):
