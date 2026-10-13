@@ -1,3 +1,5 @@
+- [2026 - Keelboat](assets/regattas/fall/2026-keelboat.html)
+- [2026 - Santana 20](assets/regattas/fall/2026-santana-20.html)
 - [2025 - Keelboat](assets/regattas/fall/2025-keelboat.html)
 - [2025 - Santana 20](assets/regattas/fall/2025-santana-20.html)
 - [2025 - 420](assets/regattas/fall/2025-420.html)
