@@ -4,39 +4,154 @@ navSection: club
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><link rel="icon" href="images/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32"><link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The story, leadership, and history of Yaquina Bay Yacht Club in Newport, Oregon.">
   <title>About YBYC | Yaquina Bay Yacht Club</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="assets/site.css" rel="stylesheet">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div class="utility-bar py-2"><div class="container-xl px-4 d-flex flex-wrap justify-content-center justify-content-md-between gap-2"><span>750 SE Bay Blvd. · Newport, Oregon 97365</span><span><a href="mailto:web@yaquinabayyachtclub.org">Email the club</a><span class="mx-2 opacity-50">|</span><a href="https://www.facebook.com/YaquinaBayYachtClub">Facebook</a></span></div></div>
-  <header class="masthead py-3 py-md-4"><div class="container-xl px-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"><a href="index.html"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club, Newport Oregon" class="site-logo"></a><p class="tagline d-none d-lg-block mb-0 text-end">Safe water sports.<br>Friendly atmosphere.</p></div></header>
   {% include "site-navigation.njk" %}
   <main id="main">
-    <section class="page-hero"><div class="container-xl px-4"><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">About</li></ol></nav><p class="hero-kicker mt-5">Our club</p><h1 class="page-title">Built by members.<br>Bound by the bay.</h1><p class="page-intro mt-4 mb-0">The story, people, and traditions behind Yaquina Bay Yacht Club.</p></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5 align-items-start">
-      <div class="col-lg-7"><p class="section-rule">Since 1947</p><h2 class="section-title mt-4">A shared love of sailing and being on the water.</h2><div class="content-copy mt-4"><p>The Yaquina Bay Yacht Club was founded in 1947 with the purpose of promoting aquatic sports of all kinds, particularly yachting, and preserving the traditions of navigation and seamanship.</p><p>The original clubhouse was located near Riverbend. After many years of temporary meeting venues, members constructed the current harbor-view clubhouse in 2004 using all volunteer labor.</p><p>A 20-by-40-foot floating structure was later added through a partnership with the Oregon Boating Foundation for the Youth Sailing Program. Today, members represent all ages and walks of life, sharing camaraderie and a love of sailing and being on the water.</p></div></div>
-      <div class="col-lg-5"><div class="info-panel"><p class="hero-kicker">At a glance</p><dl class="mb-0"><div class="detail-row"><dt>Founded</dt><dd>1947 in Newport, Oregon</dd></div><div class="detail-row"><dt>Clubhouse</dt><dd>Member-built in 2004</dd></div><div class="detail-row"><dt>Mission</dt><dd>Aquatic sports, navigation, and seamanship</dd></div><div class="detail-row"><dt>Community</dt><dd>Sailors and non-sailors of all ages</dd></div></dl></div></div>
-    </div></div></section>
-
-    <section class="pb-5"><div class="container-xl px-4"><div class="video-frame"><iframe src="https://www.youtube.com/embed/wwuGtfVM4Pg?rel=0" title="Yaquina Bay Yacht Club video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="media-caption">Life on the water with Yaquina Bay Yacht Club</div></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5"><div class="col-lg-5"><p class="section-rule">Club activities</p><h2 class="section-title mt-4">More than a place to keep a boat.</h2></div><div class="col-lg-7 content-copy"><p>Whether your interests are sailboat racing, power boat navigating, cruising local waters, rowing, crabbing, paddling, fishing, or junior sailing, YBYC is a place to share those interests with club members and friends.</p><p>The clubhouse hosts weddings, receptions, birthdays, reunions, educational programs, potlucks, and member get-togethers. The club also participates in the Seafood & Wine Festival, Loyalty Days Parade, Newport Marathon, Toledo Wooden Boat Show, Bridge to Bridge Race, and the Lighted Boat Parade.</p></div></div></div></section>
-
-    <section id="board" class="section-space bg-light border-top"><div class="container-xl px-4"><div class="row g-4 align-items-end mb-5"><div class="col-lg-8"><p class="section-rule">Leadership</p><h2 class="section-title mt-4 mb-0">2026 Board of Directors</h2></div><div class="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end"><a href="assets/docs/ybyc_bylaws_master_copy_2011.pdf" class="btn btn-ybyc btn-outline-navy">Club Bylaws ↗</a></div></div>
-      <div class="row g-4">
-        {% for group in board.groups %}<div class="col-lg-4"><article class="card board-card"><div class="card-header">{{ group.title }}</div><ul class="list-group list-group-flush">{% for member in group.members %}<li class="list-group-item"><span class="role">{{ member.role }}</span>{% if member.email %}<a class="name" href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}<span class="name">{{ member.name }}</span>{% endif %}</li>{% endfor %}</ul></article></div>{% endfor %}
+    <section class="page-hero">
+      <div class="container-xl px-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+          </ol>
+        </nav>
+        <p class="hero-kicker mt-5">Our club</p>
+        <h1 class="page-title">Built by members.<br>Bound by the bay.</h1>
+        <p class="page-intro mt-4 mb-0">The story, people, and traditions behind Yaquina Bay Yacht Club.</p>
       </div>
-      {% assign latest_commodore = board.past_commodores | last %}
-      <div class="accordion mt-5" id="historyAccordion"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pastCommodores" aria-expanded="false" aria-controls="pastCommodores">Past Commodores, 1947-{{ latest_commodore.year }}</button></h3><div id="pastCommodores" class="accordion-collapse collapse" data-bs-parent="#historyAccordion"><div class="accordion-body"><div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-2 small text-secondary">{% for commodore in board.past_commodores %}<div>{{ commodore.name }} · {{ commodore.year }}</div>{% endfor %}</div></div></div></div></div>
-    </div></section>
-
-    <section class="cta-band py-5"><div class="container-xl px-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4"><div><p class="hero-kicker text-white-50 mb-2">Get involved</p><h2 class="serif mb-0">Be part of the next chapter.</h2></div><a href="membership.html" class="btn btn-ybyc btn-light">Explore membership</a></div></section>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-7">
+            <p class="section-rule">Since 1947</p>
+            <h2 class="section-title mt-4">A shared love of sailing and being on the water.</h2>
+            <div class="content-copy mt-4">
+              <p>The Yaquina Bay Yacht Club was founded in 1947 with the purpose of promoting aquatic sports of all kinds, particularly yachting,
+                and preserving the traditions of navigation and seamanship.</p>
+              <p>The original clubhouse was located near Riverbend. After many years of temporary meeting venues, members constructed the current
+                harbor-view clubhouse in 2004 using all volunteer labor.</p>
+              <p>A 20-by-40-foot floating structure was later added through a partnership with the Oregon Boating Foundation for the Youth Sailing
+                Program. Today, members represent all ages and walks of life, sharing camaraderie and a love of sailing and being on the water.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="info-panel">
+              <p class="hero-kicker">At a glance</p>
+              <dl class="mb-0">
+                <div class="detail-row">
+                  <dt>Founded</dt>
+                  <dd>1947 in Newport, Oregon</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Clubhouse</dt>
+                  <dd>Member-built in 2004</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Mission</dt>
+                  <dd>Aquatic sports, navigation, and seamanship</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Community</dt>
+                  <dd>Sailors and non-sailors of all ages</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-5">
+      <div class="container-xl px-4">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/wwuGtfVM4Pg?rel=0" title="Yaquina Bay Yacht Club video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="media-caption">Life on the water with Yaquina Bay Yacht Club</div>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <p class="section-rule">Club activities</p>
+            <h2 class="section-title mt-4">More than a place to keep a boat.</h2>
+          </div>
+          <div class="col-lg-7 content-copy">
+            <p>Whether your interests are sailboat racing, power boat navigating, cruising local waters, rowing, crabbing, paddling, fishing, or junior sailing, YBYC is a
+              place to share those interests with club members and friends.</p>
+            <p>The clubhouse hosts weddings, receptions, birthdays, reunions, educational programs, potlucks, and member get-togethers. The club also participates in the
+              Seafood & Wine Festival, Loyalty Days Parade, Newport Marathon, Toledo Wooden Boat Show, Bridge to Bridge Race, and the Lighted Boat Parade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="board" class="section-space bg-light border-top">
+      <div class="container-xl px-4">
+        <div class="row g-4 align-items-end mb-5">
+          <div class="col-lg-8">
+            <p class="section-rule">Leadership</p>
+            <h2 class="section-title mt-4 mb-0">2026 Board of Directors</h2>
+          </div>
+          <div class="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <a href="assets/docs/ybyc_bylaws_master_copy_2011.pdf" class="btn btn-ybyc btn-outline-navy">Club Bylaws ↗</a>
+          </div>
+        </div>
+        <div class="row g-4">
+          {% for group in board.groups %}<div class="col-lg-4">
+            <article class="card board-card">
+              <div class="card-header">{{ group.title }}</div>
+              <ul class="list-group list-group-flush">
+                {% for member in group.members %}<li class="list-group-item"><span class="role">{{ member.role }}</span>
+                  {% if member.email %}<a class="name" href="mailto:{{ member.email }}">{{ member.name }}</a>{% else %}<span class="name">{{ member.name }}</span>{% endif %}
+                </li>{% endfor %}
+              </ul>
+            </article>
+          </div>{% endfor %}
+        </div>
+        {% assign latest_commodore = board.past_commodores | last %}
+        <div class="accordion mt-5" id="historyAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pastCommodores"
+                aria-expanded="false" aria-controls="pastCommodores">Past Commodores, 1947-{{ latest_commodore.year }}</button>
+            </h3>
+            <div id="pastCommodores" class="accordion-collapse collapse" data-bs-parent="#historyAccordion">
+              <div class="accordion-body">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-2 small text-secondary">
+                  {% for commodore in board.past_commodores %}<div>{{ commodore.name }} · {{ commodore.year }}</div>{% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-band py-5">
+      <div class="container-xl px-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+        <div>
+          <p class="hero-kicker text-white-50 mb-2">Get involved</p>
+          <h2 class="serif mb-0">Be part of the next chapter.</h2>
+        </div><a href="membership.html" class="btn btn-ybyc btn-light">Explore membership</a>
+      </div>
+    </section>
   </main>
-  <footer class="py-5"><div class="container-xl px-4"><div class="row g-5 pb-5 border-bottom border-white border-opacity-10"><div class="col-lg-6"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club" class="footer-logo"><p class="mt-4 mb-0 lh-lg" style="max-width:420px">Promoting safe water sports and recreation in a friendly atmosphere since 1947.</p></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Visit</p><address class="lh-lg">750 SE Bay Blvd.<br>Newport, Oregon 97365</address><a href="https://maps.google.com/?q=750+SE+Bay+Blvd+Newport+Oregon+97365">Directions ↗</a></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Explore</p><div class="d-grid gap-2"><a href="events.html">Events calendar</a><a href="our-fleet.html">Our Fleet</a><a href="clubhouse.html">Clubhouse rental</a></div></div></div><div class="d-flex justify-content-between gap-2 pt-4 small"><span>© <span id="year">2026</span> Yaquina Bay Yacht Club</span><span>Newport, Oregon</span></div></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><script src="assets/site.js"></script>
-</body></html>
+  {% assign page_links = "about" %}
+  {% include "site-footer.njk" %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/site.js"></script>
+</body>
+
+</html>

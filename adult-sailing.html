@@ -4,33 +4,136 @@ navSection: sailing
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><link rel="icon" href="images/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32"><link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="YBYC Adult Learn to Sail classes on Yaquina Bay, including 2026 dates, registration deadline, pricing, and program contact.">
   <title>Adult Sailing | Yaquina Bay Yacht Club</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="assets/site.css" rel="stylesheet">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div class="utility-bar py-2"><div class="container-xl px-4 d-flex flex-wrap justify-content-center justify-content-md-between gap-2"><span>750 SE Bay Blvd. · Newport, Oregon 97365</span><span><a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=Adult%20Sailing%20Class">Email the sailing program</a><span class="mx-2 opacity-50">|</span><a href="https://www.facebook.com/YaquinaBayYachtClub">Facebook</a></span></div></div>
-  <header class="masthead py-3 py-md-4"><div class="container-xl px-4 d-flex align-items-center justify-content-between"><a href="index.html"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club, Newport Oregon" class="site-logo"></a><p class="tagline d-none d-lg-block mb-0 text-end">Safe water sports.<br>Friendly atmosphere.</p></div></header>
+  {% assign email_user = "youth_sailing" %}
+  {% assign email_name = "Email the sailing program" %}
   {% include "site-navigation.njk" %}
-
-  <div class="notice-bar" role="status" aria-label="Class cancellation notice"><div class="container-xl px-4 d-flex align-items-center gap-3 py-3"><span class="notice-label pe-3">Canceled</span><strong>The 2026 Adult Learn to Sail class has been canceled. Registration and payment are closed.</strong></div></div>
-
+  <div class="notice-bar" role="status" aria-label="Class cancellation notice">
+    <div class="container-xl px-4 d-flex align-items-center gap-3 py-3">
+      <span class="notice-label pe-3">Canceled</span><strong>The 2026 Adult Learn to Sail class has been canceled. Registration and payment are closed.</strong>
+    </div>
+  </div>
   <main id="main">
-    <section class="page-hero"><div class="container-xl px-4"><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item"><a href="sailing.html">Sailing</a></li><li class="breadcrumb-item active">Adult Sailing</li></ol></nav><p class="hero-kicker mt-5">August–September 2026</p><h1 class="page-title">Adult Learn to Sail</h1><p class="page-intro mt-4 mb-0">Small-boat sailing instruction for adults ready to build confidence and skills on Yaquina Bay.</p></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5 align-items-center"><div class="col-lg-7"><p class="section-rule">2026 class</p><h2 class="section-title mt-4">Start sailing this summer.</h2><div class="content-copy mt-4"><p>YBYC’s adult small-boat sailing class will be held during August and September 2026. Space is reserved when payment is received.</p><p><strong>Online payment is required by the end of July 2026.</strong> Contact the sailing program with questions about the class or registration.</p></div><a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=2026%20Adult%20Learn%20to%20Sail" class="btn btn-ybyc btn-navy mt-2">Ask about the class</a></div><div class="col-lg-5"><div class="info-panel"><p class="hero-kicker">At a glance</p><dl class="mb-0"><div class="detail-row"><dt>Class period</dt><dd>August–September 2026</dd></div><div class="detail-row"><dt>Payment due</dt><dd>July 2026</dd></div><div class="detail-row"><dt>Location</dt><dd>Yaquina Bay, Newport</dd></div><div class="detail-row"><dt>Format</dt><dd>Adult small-boat sailing</dd></div></dl></div></div></div></div></section>
-
-    <section class="section-space bg-light border-top border-bottom"><div class="container-xl px-4"><div class="row g-5 mb-5"><div class="col-lg-6"><p class="section-rule">Registration closed</p><h2 class="section-title mt-4">2026 class canceled.</h2></div><div class="col-lg-6"><p class="content-copy">The member and non-member registration options below are retained for reference, but payments are no longer being accepted for this class.</p></div></div><div class="row g-4 justify-content-center"><div class="col-md-6 col-lg-5"><article class="price-card featured"><p class="hero-kicker">YBYC member</p><p class="price">$270.00</p><p class="text-secondary">Adult Learn to Sail registration for a current YBYC member.</p></article></div><div class="col-md-6 col-lg-5"><article class="price-card"><p class="hero-kicker">Non-member</p><p class="price">$540.00</p><p class="text-secondary">Adult Learn to Sail registration for a non-member.</p></article></div></div></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5 align-items-start"><div class="col-lg-4"><p class="section-rule">Class flyer</p><h2 class="section-title mt-4">2026 information</h2><p class="content-copy mt-4">Review the original class announcement for additional program information. Contact the sailing program if any flyer detail conflicts with the current club calendar.</p><a href="assets/adult-sailing/2026-adult-sailing_orig.png" class="btn btn-ybyc btn-outline-navy">Open full-size flyer ↗</a></div><div class="col-lg-8"><div class="capri-banner"><img src="assets/adult-sailing/2026-adult-sailing_orig.png" alt="2026 YBYC Adult Learn to Sail class flyer" loading="lazy"></div></div></div></div></section>
-
-    <section class="cta-band py-5"><div class="container-xl px-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3"><div><p class="hero-kicker text-white-50 mb-2">Questions before registering?</p><h2 class="serif mb-0">Contact the sailing program.</h2></div><a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=2026%20Adult%20Learn%20to%20Sail" class="btn btn-ybyc btn-light">Email the program chair</a></div></section>
+    <section class="page-hero">
+      <div class="container-xl px-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="sailing.html">Sailing</a></li>
+            <li class="breadcrumb-item active">Adult Sailing</li>
+          </ol>
+        </nav>
+        <p class="hero-kicker mt-5">August–September 2026</p>
+        <h1 class="page-title">Adult Learn to Sail</h1>
+        <p class="page-intro mt-4 mb-0">Small-boat sailing instruction for adults ready to build confidence and skills on Yaquina Bay.</p>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-rule">2026 class</p>
+            <h2 class="section-title mt-4">Start sailing this summer.</h2>
+            <div class="content-copy mt-4">
+              <p>YBYC’s adult small-boat sailing class will be held during August and September 2026. Space is reserved when payment is received.</p>
+              <p><strong>Online payment is required by the end of July 2026.</strong> Contact the sailing program with questions about the class or registration.</p>
+            </div>
+            <a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=2026%20Adult%20Learn%20to%20Sail" class="btn btn-ybyc btn-navy mt-2">Ask about the class</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="info-panel">
+              <p class="hero-kicker">At a glance</p>
+              <dl class="mb-0">
+                <div class="detail-row">
+                  <dt>Class period</dt>
+                  <dd>August–September 2026</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Payment due</dt>
+                  <dd>July 2026</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Location</dt>
+                  <dd>Yaquina Bay, Newport</dd>
+                </div>
+                <div class="detail-row">
+                  <dt>Format</dt>
+                  <dd>Adult small-boat sailing</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-space bg-light border-top border-bottom">
+      <div class="container-xl px-4">
+        <div class="row g-5 mb-5">
+          <div class="col-lg-6">
+            <p class="section-rule">Registration closed</p>
+            <h2 class="section-title mt-4">2026 class canceled.</h2>
+          </div>
+          <div class="col-lg-6">
+            <p class="content-copy">The member and non-member registration options below are retained for reference, but payments are no longer being accepted for this class.</p>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <article class="price-card featured">
+              <p class="hero-kicker">YBYC member</p>
+              <p class="price">$270.00</p>
+              <p class="text-secondary">Adult Learn to Sail registration for a current YBYC member.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <article class="price-card">
+              <p class="hero-kicker">Non-member</p>
+              <p class="price">$540.00</p>
+              <p class="text-secondary">Adult Learn to Sail registration for a non-member.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-4">
+            <p class="section-rule">Class flyer</p>
+            <h2 class="section-title mt-4">2026 information</h2>
+            <p class="content-copy mt-4">Review the original class announcement for additional program information.</p>
+            <a href="assets/adult-sailing/2026-adult-sailing_orig.png" class="btn btn-ybyc btn-outline-navy">Open full-size flyer ↗</a>
+          </div>
+          <div class="col-lg-8">
+            <div class="capri-banner"><img src="assets/adult-sailing/2026-adult-sailing_orig.png" alt="2026 YBYC Adult Learn to Sail class flyer" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-band py-5">
+      <div class="container-xl px-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
+        <div>
+          <p class="hero-kicker text-white-50 mb-2">Questions before registering?</p>
+          <h2 class="serif mb-0">Contact the sailing program.</h2>
+        </div><a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=2026%20Adult%20Learn%20to%20Sail" class="btn btn-ybyc btn-light">Email the program chair</a>
+      </div>
+    </section>
   </main>
-
-  <footer class="py-5"><div class="container-xl px-4"><div class="row g-5 pb-5 border-bottom border-white border-opacity-10"><div class="col-lg-6"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club" class="footer-logo"><p class="mt-4 mb-0">750 SE Bay Blvd. · Newport, Oregon 97365</p></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Sailing</p><div class="d-grid gap-2"><a href="sailing.html">Programs &amp; Racing</a><a href="adult-sailing.html">Adult Sailing</a><a href="youth-sailing.html">Youth Sailing</a><a href="our-fleet.html">Our Fleet</a></div></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Next steps</p><div class="d-grid gap-2"><a href="membership.html">Membership</a><a href="shop.html">Ship's Store</a><a href="mailto:youth_sailing@yaquinabayyachtclub.org?subject=Adult%20Sailing%20Class">Class questions</a></div></div></div><div class="d-flex justify-content-between pt-4 small"><span>© <span id="year">2026</span> YBYC</span><span>Newport, Oregon</span></div></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><script src="assets/site.js"></script>
+  {% assign page_links = "adult-sailing" %}
+  {% include "site-footer.njk" %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>

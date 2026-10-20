@@ -4,28 +4,153 @@ navSection: events
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><link rel="icon" href="images/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32"><link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yaquina Bay Yacht Club Spring Regatta schedule, registration, visitor information, and historical results.">
   <title>Spring Regatta | Yaquina Bay Yacht Club</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="assets/site.css" rel="stylesheet">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div class="utility-bar py-2"><div class="container-xl px-4 d-flex flex-wrap justify-content-center justify-content-md-between gap-2"><span>750 SE Bay Blvd. · Newport, Oregon 97365</span><span><a href="mailto:race@yaquinabayyachtclub.org">Email the Race Chair</a><span class="mx-2 opacity-50">|</span><a href="https://www.facebook.com/YaquinaBayYachtClub">Facebook</a></span></div></div>
-  <header class="masthead py-3 py-md-4"><div class="container-xl px-4 d-flex align-items-center justify-content-between"><a href="index.html"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club, Newport Oregon" class="site-logo"></a><p class="tagline d-none d-lg-block mb-0 text-end">Safe water sports.<br>Friendly atmosphere.</p></div></header>
+  {% assign email_user = "race" %}
+  {% assign email_name = "Email the Race Chair" %}
   {% include "site-navigation.njk" %}
-
   <main id="main">
-    <section class="page-hero"><div class="container-xl px-4"><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item"><a href="events.html">Events</a></li><li class="breadcrumb-item active">Spring Regatta</li></ol></nav><p class="hero-kicker mt-5">{{ site.events.spring_regatta.start | raceDate }}</p><h1 class="page-title">Spring Regatta</h1><p class="page-intro mt-4 mb-0">Open the season with a full day of racing, camaraderie, dinner, and awards on Yaquina Bay.</p></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5 align-items-start"><div class="col-lg-6"><p class="section-rule">About the regatta</p><h2 class="section-title mt-4">A spring tradition on the bay.</h2><div class="content-copy mt-4"><p>One or more races constitute the regatta. Racing is governed by the Racing Rules of Sailing 2025–2028, including US Sailing Prescriptions, and uses the low-point scoring system.</p><p>If seven or more races are sailed, each vessel’s worst score is excluded. Refer to the official Notice of Race for eligibility, classes, safety requirements, course details, and entry instructions.</p></div><div class="d-grid d-sm-flex gap-2 mt-4"><a href="assets/regattas/ybyc_2026_spring_regatta_notice_of_race__nor__and_entry_form.pdf" class="btn btn-ybyc btn-navy">Notice of Race &amp; entry form</a></div></div><div class="col-lg-6"><div class="info-panel"><p class="hero-kicker">Planning your visit</p><h2 class="serif fs-2 text-navy">Coming from out of town?</h2><p class="content-copy">Find local launch ramps and hoists, moorage, lodging, and camping information on our home page.</p><a href="index.html#visiting-sailors" class="btn btn-ybyc btn-outline-navy">Visiting Sailors information</a></div></div></div></div></section>
-
-    <section class="section-space bg-light border-top border-bottom"><div class="container-xl px-4"><p class="section-rule">One-day calendar</p><h2 class="section-title mt-4 mb-5">Saturday’s schedule</h2><div class="row justify-content-center"><div class="col-lg-8"><article class="race-day"><header class="race-day-header"><div class="race-day-date">{{ site.events.spring_regatta.start | raceDate: "day" }}<small>{{ site.events.spring_regatta.start | raceDate: "month" }}</small></div><div><p class="mb-1 text-white-50 small text-uppercase fw-bold">{{ site.events.spring_regatta.start | raceDate: "weekday-year" }}</p><h3 class="serif mb-0">Racing, dinner &amp; awards</h3></div></header><div class="race-day-body"><dl class="mb-0"><div class="detail-row"><dt>9:00 am</dt><dd>Registration opens; clubhouse opens</dd></div><div class="detail-row"><dt>10:00 am</dt><dd>Skipper’s meeting</dd></div><div class="detail-row"><dt>11:59 am</dt><dd>Courtesy horn on the water</dd></div><div class="detail-row"><dt>12:00 pm</dt><dd>Race 1 start sequence</dd></div><div class="detail-row"><dt>4:30 pm</dt><dd>Latest allowed race start</dd></div><div class="detail-row"><dt>6:30 pm</dt><dd>Dinner and awards</dd></div></dl></div></article></div></div></div></section>
-
-    <section class="section-space"><div class="container-xl px-4"><div class="row g-5 align-items-end mb-5"><div class="col-lg-7"><p class="section-rule">Race archive</p><h2 class="section-title mt-4">Historical results</h2><p class="content-copy mt-4 mb-0">Browse preserved Spring Regatta results by year and fleet.</p></div><div class="col-lg-5"><div class="d-flex flex-column flex-sm-row align-items-sm-end gap-3"><div class="flex-grow-1"><label class="form-label fw-bold" for="springRegattaResult">Choose a result</label><select class="form-select" id="springRegattaResult">{% for result in regattaResults.spring %}<option value="{{ result.url }}">{{ result.label }}</option>{% endfor %}</select></div><a href="https://www.sailwave.com/" target="_blank" rel="noopener" aria-label="Visit Sailwave"><img src="images/sailwave.svg" alt="Sailwave" width="150" height="40"></a></div><a href="spring-regatta-results.html" class="small fw-bold d-inline-block mt-3">Open the complete results list →</a></div></div><div class="results-frame"><iframe id="springRegattaResultsFrame" src="{{ regattaResults.spring[0].url }}" title="Spring Regatta historical results" loading="lazy"></iframe></div></div></section><script>document.getElementById("springRegattaResult")?.addEventListener("change", (event) => { document.getElementById("springRegattaResultsFrame").src = event.target.value; });</script>
-    <section class="cta-band py-5"><div class="container-xl px-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3"><div><p class="hero-kicker text-white-50 mb-2">Questions before race day?</p><h2 class="serif mb-0">Contact the Race Chair.</h2></div><a href="mailto:race@yaquinabayyachtclub.org" class="btn btn-ybyc btn-light">Email Race@YBYC </a></div></section>
+    <section class="page-hero">
+      <div class="container-xl px-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="events.html">Events</a></li>
+            <li class="breadcrumb-item active">Spring Regatta</li>
+          </ol>
+        </nav>
+        <p class="hero-kicker mt-5">{{ site.events.spring_regatta.start | raceDate }}</p>
+        <h1 class="page-title">Spring Regatta</h1>
+        <p class="page-intro mt-4 mb-0">Open the season with a full day of racing, camaraderie, dinner, and awards on Yaquina Bay.</p>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6">
+            <p class="section-rule">About the regatta</p>
+            <h2 class="section-title mt-4">A spring tradition on the bay.</h2>
+            <div class="content-copy mt-4">
+              <p>One or more races constitute the regatta. Racing is governed by the Racing Rules of Sailing 2025–2028, including US Sailing Prescriptions, and uses the
+                low-point scoring system.</p>
+              <p>If seven or more races are sailed, each vessel’s worst score is excluded. Refer to the official Notice of Race for eligibility, classes, safety requirements,
+                course details, and entry instructions.</p>
+            </div>
+            <div class="d-grid d-sm-flex gap-2 mt-4">
+              <a href="assets/regattas/ybyc_2026_spring_regatta_notice_of_race__nor__and_entry_form.pdf" class="btn btn-ybyc btn-navy">Notice of Race &amp; entry form</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="info-panel">
+              <p class="hero-kicker">Planning your visit</p>
+              <h2 class="serif fs-2 text-navy">Coming from out of town?</h2>
+              <p class="content-copy">Find local launch ramps and hoists, moorage, lodging, and camping information on our home page.</p>
+              <a href="index.html#visiting-sailors" class="btn btn-ybyc btn-outline-navy">Visiting Sailors information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-space bg-light border-top border-bottom">
+      <div class="container-xl px-4">
+        <p class="section-rule">One-day calendar</p>
+        <h2 class="section-title mt-4 mb-5">Saturday’s schedule</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <article class="race-day">
+              <header class="race-day-header">
+                <div class="race-day-date">{{ site.events.spring_regatta.start | raceDate: "day" }}<small>{{ site.events.spring_regatta.start | raceDate: "month" }}</small>
+                </div>
+                <div>
+                  <p class="mb-1 text-white-50 small text-uppercase fw-bold">{{ site.events.spring_regatta.start | raceDate: "weekday-year" }}</p>
+                  <h3 class="serif mb-0">Racing, dinner &amp; awards</h3>
+                </div>
+              </header>
+              <div class="race-day-body">
+                <dl class="mb-0">
+                  <div class="detail-row">
+                    <dt>9:00 am</dt>
+                    <dd>Registration opens; clubhouse opens</dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt>10:00 am</dt>
+                    <dd>Skipper’s meeting</dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt>11:59 am</dt>
+                    <dd>Courtesy horn on the water</dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt>12:00 pm</dt>
+                    <dd>Race 1 start sequence</dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt>4:30 pm</dt>
+                    <dd>Latest allowed race start</dd>
+                  </div>
+                  <div class="detail-row">
+                    <dt>6:30 pm</dt>
+                    <dd>Dinner and awards</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container-xl px-4">
+        <div class="row g-5 align-items-end mb-5">
+          <div class="col-lg-7">
+            <p class="section-rule">Race archive</p>
+            <h2 class="section-title mt-4">Historical results</h2>
+            <p class="content-copy mt-4 mb-0">Browse Spring Regatta results by year and fleet.</p>
+          </div>
+          <div class="col-lg-5">
+            <div class="d-flex flex-column flex-sm-row align-items-sm-end gap-3">
+              <div class="flex-grow-1">
+                <label class="form-label fw-bold" for="springRegattaResult">Choose a result</label>
+                <select class="form-select" id="springRegattaResult">
+                  {% for result in regattaResults.spring %}<option value="{{ result.url }}">{{ result.label }}</option>{% endfor %}
+                </select>
+              </div>
+              <a href="https://www.sailwave.com/" target="_blank" rel="noopener" aria-label="Visit Sailwave"><img src="images/sailwave.svg" alt="Sailwave" width="150" height="40"></a>
+            </div>
+            <a href="spring-regatta-results.html" class="small fw-bold d-inline-block mt-3">Open the complete results list →</a>
+          </div>
+        </div>
+        <div class="results-frame">
+          <iframe id="springRegattaResultsFrame" src="{{ regattaResults.spring[0].url }}" title="Spring Regatta historical results" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+    <script>document.getElementById("springRegattaResult")?.addEventListener("change", (event) => { document.getElementById("springRegattaResultsFrame").src = event.target.value; });</script>
+    <section class="cta-band py-5">
+      <div class="container-xl px-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
+        <div>
+          <p class="hero-kicker text-white-50 mb-2">Questions before race day?</p>
+          <h2 class="serif mb-0">Contact the Race Chair.</h2>
+        </div>
+        <a href="mailto:race@yaquinabayyachtclub.org" class="btn btn-ybyc btn-light">Email Race@YBYC </a>
+      </div>
+    </section>
   </main>
-  <footer class="py-5"><div class="container-xl px-4"><div class="row g-5 pb-5 border-bottom border-white border-opacity-10"><div class="col-lg-6"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club" class="footer-logo"><p class="mt-4 mb-0">750 SE Bay Blvd. · Newport, Oregon 97365</p></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Events</p><div class="d-grid gap-2"><a href="spring-regatta.html">Spring Regatta</a><a href="wednesday-night-racing.html">Wednesday Night Racing</a><a href="centerboard-slam.html">Centerboard Slam</a><a href="fall-regatta.html">Fall Regatta</a></div></div><div class="col-sm-6 col-lg-3"><p class="hero-kicker text-warning">Plan ahead</p><div class="d-grid gap-2"><a href="index.html#visiting-sailors">Visiting Sailors</a><a href="events.html">Events calendar</a><a href="sailing.html">Programs &amp; Racing</a></div></div></div><div class="d-flex justify-content-between pt-4 small"><span>© <span id="year">2026</span> YBYC</span><span>Newport, Oregon</span></div></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><script src="assets/site.js"></script>
-</body></html>
+  {% assign links_title = "Events" %}
+  {% assign page_links = "spring-regatta" %}
+  {% include "site-footer.njk" %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
