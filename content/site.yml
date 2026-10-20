@@ -1,24 +1,24 @@
 club_alert:
-  message: The 2026 Adult Learn to Sail course has been canceled
-  details_url: adult-sailing.html
-  details_label: View class details
+  message: Membership renewals are open for 2027.
+  details_url: shop.html
+  details_label: Renew your membership today!
 
 from_the_clubhouse:
   potluck:
-    date: 2026-08-15
-    details_label: Monthly Potluck
+    date: 2026-11-21
+    details_label: Annual Member's Meeting
   jibsheet:
-    month: August
+    month: October
     year: 2026
-    url: https://drive.google.com/file/d/1GNtcJg2Rmlu7R89KFANzPdpAzbEVlMr4/view
+    url: https://drive.google.com/file/d/1eOt1HqExB8FVlQb-Bw4DF-xpjmk9-gc_/view
 
 club_highlights:
   year: 2026
   calendar:
-    - tag: Sep 2026
-      heading: Centerboard Slam!
-      message: Join us for a dinghy regatta on the bay
-      url: centerboard-slam.html
+    - tag: Oct 2026
+      heading: Fall Regatta
+      message: Join us for our season ending tournament
+      url: fall-regatta.html
     - tag: Wed Seasonal
       heading: Evening race series
       message: Spring, summer, and fall racing on Yaquina Bay
