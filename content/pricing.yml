@@ -1,0 +1,33 @@
+# Public prices shown outside the Ship's Store.
+# Amounts are in US dollars. Update this file when the club changes a price.
+membership:
+  year: 2026
+  initiation_fee: 100
+  household:
+    new: 490
+    renewal: 390
+  individual:
+    new: 425
+    renewal: 325
+  crew:
+    annual: 160
+  student_military:
+    annual: 125
+
+adult_sailing:
+  member:
+    reference: 270
+    online: 270.40
+  non_member:
+    reference: 540
+    online: 540.80
+
+capri_club:
+  year: 2026
+  seasonal_membership: 155
+  daily_rental: 75
+  wednesday_race: 60
+  checkout: 25
+
+wednesday_racing:
+  non_member_series: 80

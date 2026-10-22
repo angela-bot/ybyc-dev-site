@@ -3,6 +3,7 @@
 Edit the files in this folder to update recurring site content:
 
 - `site.yml` — club alert and event dates.
+- `pricing.yml` — public membership, program, and event prices shown outside the Ship's Store.
 - `navigation.md` — primary navigation links. Indent a link by two spaces to place it in the preceding menu.
 - `wednesday-races.md` — archived Wednesday-race links and descriptions.
 

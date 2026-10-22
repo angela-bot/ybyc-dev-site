@@ -177,24 +177,24 @@ navSection: home
                 <tbody>
                   <tr>
                     <td><span class="type">Household</span><small class="d-block text-secondary mt-1">Two or more in one household</small></td>
-                    <td class="price">$390</td>
+                    <td class="price">{{ pricing.membership.household.renewal | money: 0 }}</td>
                   </tr>
                   <tr>
                     <td><span class="type">Individual</span><small class="d-block text-secondary mt-1">One adult, age 21 or older</small></td>
-                    <td class="price">$325</td>
+                    <td class="price">{{ pricing.membership.individual.renewal | money: 0 }}</td>
                   </tr>
                   <tr>
                     <td><span class="type">Crew</span><small class="d-block text-secondary mt-1">Non-voting membership, must be sponsored by a skipper</small></td>
-                    <td class="price">$160</td>
+                    <td class="price">{{ pricing.membership.crew.annual | money: 0 }}</td>
                   </tr>
                   <tr>
                     <td><span class="type">Student or military</span><small class="d-block text-secondary mt-1">Accessible membership category</small></td>
-                    <td class="price">$125</td>
+                    <td class="price">{{ pricing.membership.student_military.annual | money: 0 }}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p class="small text-secondary mt-3">New individual and household memberships have a one-time $100 initiation fee.</p>
+            <p class="small text-secondary mt-3">New individual and household memberships have a one-time {{ pricing.membership.initiation_fee | money: 0 }} initiation fee.</p>
           </div>
         </div>
       </div>
