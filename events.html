@@ -128,30 +128,7 @@ navSection: events
       </div>
     </section>
   </main>
-  <footer class="py-5">
-    <div class="container-xl px-4">
-      <div class="row g-5 pb-5 border-bottom border-white border-opacity-10">
-        <div class="col-lg-6"><img src="images/1402298121.png" alt="Yaquina Bay Yacht Club" class="footer-logo">
-          <p class="mt-4 mb-0 lh-lg">Promoting safe water sports and recreation since 1947.</p>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <p class="hero-kicker text-warning">Visit</p>
-          <address class="lh-lg">750 SE Bay Blvd.<br>Newport, Oregon 97365</address>
-          <a href="https://maps.google.com/?q=750+SE+Bay+Blvd+Newport+Oregon+97365">Directions ↗</a>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <p class="hero-kicker text-warning">Contact</p>
-          <div class="d-grid gap-2">
-            <a href="mailto:web@yaquinabayyachtclub.org">General inquiries</a>
-            <a href="mailto:house@yaquinabayyachtclub.org">Clubhouse rental</a>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 pt-4 small">
-        <span>© <span id="year">2026</span> Yaquina Bay Yacht Club</span><span>Newport, Oregon</span>
-      </div>
-    </div>
-  </footer>
+  {% include "site-footer.njk" %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/site.js"></script>

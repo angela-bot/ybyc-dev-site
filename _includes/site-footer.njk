@@ -1,4 +1,5 @@
 
+  {% assign footer_page = page.fileSlug | default: "index" %}
   <footer class="py-5">
     <div class="container-xl px-4">
       <div class="row g-5 pb-5 border-bottom border-white border-opacity-10">
@@ -11,9 +12,9 @@
           <a href="https://maps.google.com/?q=750+SE+Bay+Blvd+Newport+Oregon+97365">Directions ↗</a>
         </div>
         <div class="col-sm-6 col-lg-3">
-          <p class="hero-kicker text-warning">{{ links_title | default: "Explore" }}</p>
+          <p class="hero-kicker text-warning">{{ footer_links.pages[footer_page].title | default: "Explore" }}</p>
           <div class="d-grid gap-2">
-          {% for link in site.links[page_links] %}
+          {% for link in footer_links.pages[footer_page].items %}
             <a href="{{ link.href }}">{{ link.text }}</a>
           {% endfor %}
           </div>
