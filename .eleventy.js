@@ -67,6 +67,16 @@ function raceDate(value, format = "long") {
   return `${current.weekday}, ${current.month} ${current.day}, ${current.year}`;
 }
 
+function money(value, fractionDigits = 2) {
+  const digits = Number(fractionDigits);
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }).format(Number(value));
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("assets/wednesday-races");
@@ -74,6 +84,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter("markdown", (source) => markdown.render(source));
   eleventyConfig.addLiquidFilter("navigation", (source, activeSection) => renderNavigation(source, activeSection));
   eleventyConfig.addLiquidFilter("raceDate", raceDate);
+  eleventyConfig.addLiquidFilter("money", money);
+  eleventyConfig.addWatchTarget("content/pricing.yml");
 
   return {
     dir: {

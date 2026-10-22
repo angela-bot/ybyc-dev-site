@@ -92,14 +92,14 @@ navSection: sailing
           <div class="col-md-6 col-lg-5">
             <article class="price-card featured">
               <p class="hero-kicker">YBYC member</p>
-              <p class="price">$270.00</p>
+              <p class="price">{{ pricing.adult_sailing.member.reference | money }}</p>
               <p class="text-secondary">Adult Learn to Sail registration for a current YBYC member.</p>
             </article>
           </div>
           <div class="col-md-6 col-lg-5">
             <article class="price-card">
               <p class="hero-kicker">Non-member</p>
-              <p class="price">$540.00</p>
+              <p class="price">{{ pricing.adult_sailing.non_member.reference | money }}</p>
               <p class="text-secondary">Adult Learn to Sail registration for a non-member.</p>
             </article>
           </div>

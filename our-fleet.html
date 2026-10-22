@@ -154,25 +154,25 @@ navSection: club
                 <thead>
                   <tr>
                     <th>Item</th>
-                    <th>2026 Prices</th>
+                    <th>{{ pricing.capri_club.year }} Prices</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Seasonal Capri Club membership</td>
-                    <td class="amount">$155.00</td>
+                    <td class="amount">{{ pricing.capri_club.seasonal_membership | money }}</td>
                   </tr>
                   <tr>
                     <td>Daily boat rental</td>
-                    <td class="amount">$75.00</td>
+                    <td class="amount">{{ pricing.capri_club.daily_rental | money }}</td>
                   </tr>
                   <tr>
                     <td>Regular Wednesday race</td>
-                    <td class="amount">$60.00</td>
+                    <td class="amount">{{ pricing.capri_club.wednesday_race | money }}</td>
                   </tr>
                   <tr>
                     <td>Required checkout, if not already completed</td>
-                    <td class="amount">$25.00</td>
+                    <td class="amount">{{ pricing.capri_club.checkout | money }}</td>
                   </tr>
                 </tbody>
               </table>
