@@ -1,7 +1,7 @@
 (() => {
   // Display fallbacks. The checkout API replaces these with Square's current values.
   const CATALOG = {
-    'membership--renewal': { label: 'Membership - Renewal', variations: { individual: { label: 'Individual', priceMoney: { amount: 10000, currency: 'USD' } }, household: { label: 'Household', priceMoney: { amount: 20000, currency: 'USD' } }, crew: { label: 'Crew', priceMoney: { amount: 5000, currency: 'USD' } }, 'student/military': { label: 'Student, Military', priceMoney: { amount: 2500, currency: 'USD' } } } }
+    'membership---renewal': { label: 'Membership - Renewal', variations: { individual: { label: 'Individual', priceMoney: { amount: 10000, currency: 'USD' } }, household: { label: 'Household', priceMoney: { amount: 20000, currency: 'USD' } }, crew: { label: 'Crew', priceMoney: { amount: 5000, currency: 'USD' } }, 'student/military': { label: 'Student, Military', priceMoney: { amount: 2500, currency: 'USD' } } } }
   };
 
   const money = value => value ? (value.amount / 100).toLocaleString('en-US', { style: 'currency', currency: value.currency || 'USD' }) : 'Price in Square';
