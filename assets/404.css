@@ -1,0 +1,18 @@
+.not-found-page { background: var(--cream); }
+.not-found-section { display: grid; place-items: center; min-height: clamp(32rem, 68vh, 46rem); padding-block: clamp(4rem, 8vw, 7rem); overflow: hidden; }
+.not-found-content { position: relative; max-width: 48rem; margin-inline: auto; }
+.not-found-title { color: var(--navy); font-size: clamp(3.4rem, 9vw, 7.2rem); font-weight: 400; line-height: .92; letter-spacing: -.055em; }
+.not-found-copy { max-width: 35rem; color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.65; }
+.not-found-art { position: relative; width: min(100%, 27rem); height: 15.5rem; margin: 2.5rem auto 0; }
+.not-found-art svg { position: absolute; z-index: 1; bottom: 0; left: 50%; width: min(100%, 25rem); transform: translateX(-50%); }
+.not-found-disc { position: absolute; top: .3rem; left: 50%; width: 14rem; height: 14rem; border: 1px solid rgba(16,29,73,.2); border-radius: 50%; background: #d9eaf0; transform: translateX(-50%); box-shadow: 0 0 0 1.25rem rgba(22,90,131,.05); }
+.not-found-water-lines { position: absolute; z-index: 0; right: 0; bottom: 2.4rem; left: 0; height: 5.5rem; background: repeating-radial-gradient(ellipse at center top, transparent 0 18px, rgba(22,90,131,.35) 19px 21px, transparent 22px 35px); }
+.not-found-coordinates { position: absolute; z-index: 2; right: -.8rem; bottom: .65rem; color: var(--navy); font-size: .65rem; font-weight: 800; letter-spacing: .11em; writing-mode: vertical-rl; }
+
+@media (max-width: 575.98px) {
+  .not-found-section { min-height: 0; }
+  .not-found-art { height: 12.5rem; margin-top: 2rem; }
+  .not-found-disc { width: 11.5rem; height: 11.5rem; }
+  .not-found-water-lines { bottom: 1.8rem; height: 4.5rem; }
+  .not-found-coordinates { right: 0; bottom: .35rem; font-size: .56rem; }
+}
