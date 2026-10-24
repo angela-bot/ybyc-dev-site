@@ -134,3 +134,11 @@ pages:
         text: Membership
       - href: mailto:race@yaquinabayyachtclub.org
         text: Regattas
+  404:
+    items:
+      - href: events.html
+        text: Events calendar
+      - href: our-fleet.html
+        text: Our Fleet
+      - href: clubhouse.html
+        text: Clubhouse rental
