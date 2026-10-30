@@ -21,6 +21,11 @@
   let apiAvailable = false;
   try { cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { cart = {}; }
 
+  // Remove saved items whose store section is no longer displayed.
+  const availableSkus = new Set(Array.from(document.querySelectorAll('[data-product-key][data-variation-key]'), button => sku(button.dataset.productKey, button.dataset.variationKey)));
+  Object.keys(cart).forEach(value => { if (!availableSkus.has(value)) delete cart[value]; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+
   function cartPayload() {
     return { items: Object.entries(cart).filter(([, quantity]) => quantity > 0).map(([value, quantity]) => { const [productKey, variationKey] = splitSku(value); return { productKey, variationKey, quantity }; }) };
   }
@@ -32,7 +37,7 @@
   }
   function addToCart(productKey, variationKey) {
     const value = sku(productKey, variationKey);
-    if (!productInfo(value) || productInfo(value).variation.inStock === false) return;
+    if (!availableSkus.has(value) || !productInfo(value) || productInfo(value).variation.inStock === false) return;
     cart[value] = (cart[value] || 0) + 1;
     saveCart();
     bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('cartDrawer')).show();

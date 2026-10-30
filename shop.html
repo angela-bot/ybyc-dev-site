@@ -17,6 +17,8 @@ navSection: shop
   <link href="assets/shop.css" rel="stylesheet">
 </head>
 <body>
+  {% assign email_user = "shipsstore" %}
+  {% assign email_name = "Questions about a purchase?" %}
   {% include "site-navigation.njk" %}
   <main id="main">
     <section class="page-hero">
@@ -29,61 +31,196 @@ navSection: shop
         </nav>
         <p class="hero-kicker mt-5">Memberships · classes · regattas</p>
         <h1 class="page-title">YBYC Ship's Store</h1>
-        <p class="page-intro mt-4 mb-0">Organize your selections here, review Square’s current pricing and discounts, then complete one secure hosted checkout.</p>
+        <p class="page-intro mt-4 mb-0">Explore current offerings and complete available online purchases through Square’s secure checkout.</p>
       </div>
     </section>
     <section class="section-space">
       <div class="container-xl px-4">
+        {% if pricing.store_sections.new_membership or pricing.store_sections.renewals %}
         <div id="memberships" class="row g-4 align-items-end mb-4">
-          <h2 class="section-title mt-4 mb-0">Renew your membership</h2>
+          <div class="col-lg-8">
+            <p class="section-rule">Membership</p>
+          </div>
+        </div>
+        {% endif %}
+        {% if pricing.store_sections.new_membership %}
+        <div id="memberships" class="row g-4 align-items-end mb-4">
+          <h2 class="section-title mt-4 mb-0">Join our club!</h2>
         </div>
         <div class="row g-4 mb-5">
           <div class="col-md-6 col-lg-4">
             <article class="product-card">
-              <p class="product-category">Household</p>
-              <h2>Annual renewal</h2>
-              <p class="product-price" data-square-product="membership---renewal" data-square-variation="household">$390.00</p>
-              <p class="product-note">Annual household membership renewal<br>Price includes service fee and $10 early renewal discount.</p>
-              <button data-product-key="membership---renewal" data-variation-key="household" class="btn btn-ybyc btn-red">Add to cart</button>
+              <p class="product-category">New membership</p>
+              <h2>Household</h2>
+              <p class="product-price" data-square-product="membership-new" data-square-variation="household">{{ pricing.membership.household.new | money }}</p>
+              <p class="product-note">Annual household membership.<br>Price include service fee and {{ pricing.membership.initiation_fee | money: 0 }} initiation fee.</p>
+              <button data-product-key="membership-new" data-variation-key="household" class="btn btn-ybyc btn-navy">Add to cart</button>
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
             <article class="product-card">
-              <p class="product-category">Individual</p>
-              <h2>Annual renewal</h2>
-              <p class="product-price" data-square-product="membership---renewal" data-square-variation="individual">$325.00</p>
-              <p class="product-note">Annual individual membership renewal<br>Price includes service fee and $10 early renewal discount.</p>
-              <button data-product-key="membership---renewal" data-variation-key="individual" class="btn btn-ybyc btn-navy">Add to cart</button>
+              <p class="product-category">New membership</p>
+              <h2>Individual</h2>
+              <p class="product-price" data-square-product="membership-new" data-square-variation="individual">{{ pricing.membership.individual.new | money }}</p>
+              <p class="product-note">Annual individual membership.<br>Price include service fee and {{ pricing.membership.initiation_fee | money: 0 }} initiation fee.</p>
+              <button data-product-key="membership-new" data-variation-key="individual" class="btn btn-ybyc btn-red">Add to cart</button>
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
             <article class="product-card">
-              <p class="product-category">Crew</p>
-              <h2>Annual membership</h2>
-              <p class="product-price" data-square-product="membership---renewal" data-square-variation="crew">$160.00</p>
-              <p class="product-note">Annual membership for sponsored crew members<br>Price includes service fee and $10 early renewal discount.</p>
+              <p class="product-category">New membership</p>
+              <h2>Crew</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="crew">{{ pricing.membership.crew.annual | money }}</p>
+              <p class="product-note">Annual membership for sponsored crew members.<br>Price includes service fee.</p>
               <button data-product-key="membership---renewal" data-variation-key="crew" class="btn btn-ybyc btn-navy">Add to cart</button>
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
             <article class="product-card">
-              <p class="product-category">Student · Military</p>
-              <h2>Annual membership</h2>
-              <p class="product-price" data-square-product="membership---renewal" data-square-variation="student/military">$125.00</p>
-              <p class="product-note">Annual membership for students and current/former members of the armed forces<br>Price includes service fee.</p>
+              <p class="product-category">New membership</p>
+              <h2>Student · Military</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="student/military">{{ pricing.membership.student_military.annual | money }}</p>
+              <p class="product-note">Annual membership for students and current/former members of the armed forces.
+                <br>Price includes service fee.</p>
               <button data-product-key="membership---renewal" data-variation-key="student/military" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+        {% if pricing.store_sections.renewals %}
+        <div id="membership-renewals" class="row g-4 align-items-end mb-4">
+          <h2 class="section-title mt-4 mb-0">Renew for {{ pricing.membership.year }}</p></h2>
+        </div>
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Annual Renewal</p>
+              <h2>Household</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="household">{{ pricing.membership.household.renewal | money }}</p>
+              <p class="product-note">Annual household membership renewal.<br>Price includes service fee.<br>$10 late fee applies after the annual members meeting.</p>
+              <button data-product-key="membership---renewal" data-variation-key="household" class="btn btn-ybyc btn-red">Add to cart</button>
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
             <article class="product-card">
+              <p class="product-category">Annual Renewal</p>
+              <h2>Individual</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="individual">{{ pricing.membership.individual.renewal | money }}</p>
+              <p class="product-note">Annual individual membership renewal.<br>Price includes service fee.<br>$10 late fee applies after the Annual Members Meeting.</p>
+              <button data-product-key="membership---renewal" data-variation-key="individual" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Annual Renewal</p>
+              <h2>Crew</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="crew">{{ pricing.membership.crew.annual | money }}</p>
+              <p class="product-note">Annual membership for sponsored crew members.<br>Price includes service fee.<br>$10 late fee applies after the Annual Members Meeting.</p>
+              <button data-product-key="membership---renewal" data-variation-key="crew" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Annual Renewal</p>
+              <h2>Student · Military</h2>
+              <p class="product-price" data-square-product="membership---renewal" data-square-variation="student/military">{{ pricing.membership.student_military.annual | money }}</p>
+              <p class="product-note">Annual membership for students and current/former members of the armed forces.
+                <br>Price includes service fee.<br>$10 late fee applies after the Annual Members Meeting.</p>
+              <button data-product-key="membership---renewal" data-variation-key="student/military" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+          {% if pricing.store_sections.annual_meeting %}
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
               <p class="product-category">Annual Meeting</p>
               <h2>Meeting ticket</h2>
-              <p class="product-price" data-square-product="ticket-for-annual-meeting" data-square-variation="regular">$20.00</p>
-              <p class="product-note">Reserve tickets for the Annual Members Meeting in November<br>Price includes service fee.</p>
+              <p class="product-price" data-square-product="ticket-for-annual-meeting" data-square-variation="regular">{{ pricing.membership.meeting_ticket | money }}</p>
+              <p class="product-note">Reserve tickets for the Annual Members Meeting in November.<br>Price includes service fee.</p>
               <button data-product-key="ticket-for-annual-meeting" data-variation-key="regular" class="btn btn-ybyc btn-red">Add to cart</button>
             </article>
           </div>
+          {% endif %}
         </div>
+        {% endif %}
+        {% if pricing.store_sections.adult_sailing or pricing.store_sections.capri_club or pricing.store_sections.wednesday_racing %}
+        <div class="col-lg-8">
+          <p class="section-rule">Sailing</p>
+        </div>
+        {% endif %}
+        {% if pricing.store_sections.adult_sailing %}
+        <div id="classes" class="row g-4 align-items-end mb-4">
+          <h2 class="section-title mt-4 mb-0">Classes.</h2>
+        </div>
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Adult Lean to Sail</p>
+              <h2>Member Price</h2>
+              <p class="product-price" data-square-product="adult-sail-member" data-square-variation="default">{{ pricing.adult_sailing.member | money }}</p>
+              <p class="product-note">Adult sailing registration for current members.</p>
+              <button data-product-key="adult-sail-member" data-variation-key="default" class="btn btn-ybyc btn-red">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Adult Lean to Sail</p>
+              <h2>Non-Member Price</h2>
+              <p class="product-price" data-square-product="adult-sail-nonmember" data-square-variation="default">{{ pricing.adult_sailing.non_member | money }}</p>
+              <p class="product-note">Adult sailing registration for non-members.</p>
+              <button data-product-key="adult-sail-nonmember" data-variation-key="default" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+        {% if pricing.store_sections.capri_club %}
+        <div id="capri-club" class="row g-4 align-items-end mb-4">
+          <h2 class="section-title mt-4 mb-0">Sail Fulmar.</h2>
+        </div>
+        <div class="row g-4 mb-5">
+          <div id="capri" class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Capri Club</p>
+              <h2>Boat checkout</h2>
+              <p class="product-price" data-square-product="capri-club" data-square-variation="checkout">{{ pricing.capri_club.checkout | money }}</p>
+              <p class="product-note">Required checkout aboard Fulmar.</p>
+              <button data-product-key="capri-club" data-variation-key="checkout" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Capri Club</p>
+              <h2>Wednesday racing</h2>
+              <p class="product-price" data-square-product="capri-club" data-square-variation="wednesday-races">{{ pricing.capri_club.wednesday_races | money }}</p>
+              <p class="product-note">Use of Fulmar for a Wednesday race.</p>
+              <button data-product-key="capri-club" data-variation-key="wednesday-race" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Capri Club</p>
+              <h2>Daily rental</h2>
+              <p class="product-price" data-square-product="capri-club" data-square-variation="daily-rental">{{ pricing.capri_club.daily_rental | money }}</p>
+              <p class="product-note">One-day rental for checked-out members.</p>
+              <button data-product-key="capri-club" data-variation-key="daily-rental" class="btn btn-ybyc btn-red">Add to cart</button>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+              <p class="product-category">Capri Club</p>
+              <h2>Seasonal membership</h2>
+              <p class="product-price" data-square-product="capri-club" data-square-variation="seasonal-membership">{{ pricing.capri_club.seasonal_membership | money }}</p>
+              <p class="product-note">Season-long Capri Club participation.</p>
+              <button data-product-key="capri-club" data-variation-key="seasonal-membership" class="btn btn-ybyc btn-navy">Add to cart</button>
+            </article>
+          </div>
+        </div>
+        {% endif %}
+        {% if pricing.store_sections.wednesday_racing %}
+        <div id="wednesday-night-racing-shop" class="row g-4 align-items-end mb-4">
+          <h2 class="section-title mt-4 mb-0">Wednesday Night Racing</h2>
+        </div>
+        <p class="content-copy mb-5">Online purchases are not yet configured. <a href="wednesday-night-racing.html">See Wednesday racing details</a>.</p>
+        {% endif %}
       </div>
     </section>
   </main>
