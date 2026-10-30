@@ -15,7 +15,7 @@ navSection: sailing
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="assets/site.css" rel="stylesheet">
 </head>
-<body><a href="#main" class="skip-link">Skip to content</a>
+<body>
   {% include "site-navigation.njk" %}
   <main id="main">
     <section class="page-hero">
@@ -40,11 +40,11 @@ navSection: sailing
               <dl>
                 <div class="detail-row">
                   <dt>Member</dt>
-                  <dd>{{ pricing.adult_sailing.member.online | money }} online</dd>
+                  <dd>{{ pricing.adult_sailing.member | money }} online</dd>
                 </div>
                 <div class="detail-row">
                   <dt>Non-member</dt>
-                  <dd>{{ pricing.adult_sailing.non_member.online | money }} online</dd>
+                  <dd>{{ pricing.adult_sailing.non_member | money }} online</dd>
                 </div>
               </dl><a href="adult-sailing.html" class="btn btn-ybyc btn-red">Class details</a>
             </article>

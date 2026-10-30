@@ -1,33 +1,41 @@
-# Public prices shown outside the Ship's Store.
+# Public prices and Ship's Store section availability.
 # Amounts are in US dollars. Update this file when the club changes a price.
+# Set a section to true to show it in the store, or false to hide it.
+# Changes take effect when the site is rebuilt and deployed. Visibility does
+# not restrict direct access to the checkout API.
+store_sections:
+  new_membership: false
+  renewals: true
+  annual_meeting: true
+  adult_sailing: false
+  capri_club: false
+  wednesday_racing: false
+
 membership:
-  year: 2026
+  year: 2027
   initiation_fee: 100
+  meeting_ticket: 20
   household:
-    new: 490
-    renewal: 390
+    new: 480
+    renewal: 380
   individual:
-    new: 425
-    renewal: 325
+    new: 415
+    renewal: 315
   crew:
-    annual: 160
+    annual: 150
   student_military:
     annual: 125
 
 adult_sailing:
-  member:
-    reference: 270
-    online: 270.40
-  non_member:
-    reference: 540
-    online: 540.80
+  member: 270
+  non_member: 540
 
 capri_club:
   year: 2026
   seasonal_membership: 155
   daily_rental: 75
-  wednesday_race: 60
+  wednesday_races: 60
   checkout: 25
 
-wednesday_racing:
+wednesday_races:
   non_member_series: 80
