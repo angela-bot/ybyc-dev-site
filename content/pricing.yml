@@ -6,7 +6,7 @@
 store_sections:
   new_membership: false
   renewals: true
-  annual_meeting: true
+  annual_meeting: false
   adult_sailing: false
   capri_club: false
   wednesday_racing: false

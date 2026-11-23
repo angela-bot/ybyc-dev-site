@@ -1,12 +1,12 @@
 current_board:
   commodore:
-    name: Sam Weber
+    name: Laura Rittall Robinson
     email: commodore@yaquinabayyachtclub.org
   vice-commodore:
-    name: Laura Rittall Robinson
+    name: David Robinson
     email: vice_commodore@yaquinabayyachtclub.org
   rear-commodore:
-    name: Alan Robson
+    name: Sam Weber
     email: rear_commodore@yaquinabayyachtclub.org
   treasurer:
     name: Terry Lettenmaier & Laurie Weitkamp
@@ -15,7 +15,7 @@ current_board:
     name: Josh Orkin
     email: secretary@yaquinabayyachtclub.org
   house:
-    name: Angela Sutton & Eric Parsh
+    name: Angela Sutton
     email: house@yaquinabayyachtclub.org
   fleet:
     name: Craig Waldron
@@ -24,16 +24,16 @@ current_board:
     name: Clint Mattox
     email: membership@yaquinabayyachtclub.org
   race:
-    name: Jerami Schroeder
+    name: Andrew Gause
     email: race@yaquinabayyachtclub.org
   hospitality:
-    name: Angela & Sean Pieper
+    name: Laura Roderick
     email: hospitality@yaquinabayyachtclub.org
   newsletter:
-    name: Tiffany Kirwan
+    name: Lukas Fischer
     email: newsletter@yaquinabayyachtclub.org
   webmaster:
-    name: Rachel Cotton
+    name: Angela Pieper
     email: web@yaquinabayyachtclub.org
   education:
     name: Dan Crowell
@@ -47,7 +47,7 @@ current_board:
   nominating:
     name: Empty
   historical:
-    name: Dorothy Bogumil & Diane Henkels
+    name: Diane Henkels
     email: historian@yaquinabayyachtclub.org
   ships_store:
     name: Deborah Rose
@@ -182,3 +182,5 @@ past_commodores:
     year: 2024
   - name: Alan Robson
     year: 2025
+  - name: Sam Weber
+    year: 2026

@@ -5,24 +5,23 @@ club_alert:
 
 from_the_clubhouse:
   potluck:
-    date: 2026-11-21
-    details_label: Annual Member's Meeting
+    date: 2026-12-19
+    details_label: Holiday party, contact <a href="mailto:hospitality@yaquinabayyachtclub.org">Hospitality</a> if interested in hosting
   jibsheet:
-    month: October
+    month: November
     year: 2026
-    url: https://drive.google.com/file/d/1eOt1HqExB8FVlQb-Bw4DF-xpjmk9-gc_/view
+    url: https://drive.google.com/file/d/1dWTKkzprU-MLJnKJrCqYXWcNkmOP7iG6/view
 
 club_highlights:
   year: 2026
   calendar:
-    - tag: Oct 2026
-      heading: Fall Regatta
-      message: Join us for our season ending tournament
-      url: fall-regatta.html
+    - tag: Dec 5
+      heading: Newport's Lighted Boat Parade
+      message: Show your holiday spirit on the water!
+      url: https://www.newportchamber.org/chamber-events/lighted-boat-parade-2/
     - tag: Wed Seasonal
-      heading: Evening race series
-      message: Spring, summer, and fall racing on Yaquina Bay
-      url: wednesday-night-racing.html
+      heading: Winter Wednesdays are back!
+      message: Starting December 2, join us at the clubhouse on Wednesdays at 6:30 PM, for games/movies/general camaraderie
     - tag: Year Round
       heading: Community events
       message: Regattas, the Wooden Boat Show, parades, and social gatherings.
