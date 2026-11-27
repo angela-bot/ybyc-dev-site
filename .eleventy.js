@@ -81,6 +81,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("assets/wednesday-races");
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addLiquidFilter("markdown", (source) => markdown.render(source));
   eleventyConfig.addLiquidFilter("navigation", (source, activeSection) => renderNavigation(source, activeSection));
   eleventyConfig.addLiquidFilter("raceDate", raceDate);
